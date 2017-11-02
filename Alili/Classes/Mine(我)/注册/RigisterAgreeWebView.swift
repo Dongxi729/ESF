@@ -13,19 +13,12 @@ class RigisterAgreeWebView: WKBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-//        self.urlRequestCache = NSURLRequest.init(url: URL.init(string: self.url)!)
-//
-//        self.webView.load(self.urlRequestCache as URLRequest)
-        
         loadFirst(loadURl: self.url, firstUrl: rigisterUrl)
     }
 

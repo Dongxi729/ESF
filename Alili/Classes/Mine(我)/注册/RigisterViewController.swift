@@ -89,29 +89,6 @@ extension RigisterViewController {
 extension RigisterViewController {
     func click() {
         
-//        let alert = UIAlertController.init(title: "提示", message: "您确定要放弃当前编辑的内容么?", preferredStyle: .alert)
-//        
-//        
-//        alert.addAction(UIAlertAction.init(title: "放弃编辑", style: .destructive, handler: { (nil) in
-//            
-//            if let navController = self.navigationController {
-//                navController.popViewController(animated: true)
-//            }
-//        }))
-//        
-//        alert.addAction(UIAlertAction.init(title: "留在此页", style: .default, handler: nil))
-//        
-//        
-//        print("rigV.tfNum.text?.characters.count",rigV.tfNum.text?.characters.count)
-//        
-//        //判断注册视图是否为空
-//        if RigisterView.shared.tfNum.text?.characters.count != 0 {
-//            self.navigationController?.present(alert, animated: true, completion: nil)
-//        }  else {
-//            return
-//        }
-        
-        
     }
 
 }

@@ -25,7 +25,11 @@ extension WKBaseViewController {
             NetStatusModel.netStatus = sddd.rawValue
             if let nav = self.navigationController?.viewControllers.count {
                 
-                if NSStringFromClass(self.classForCoder).contains("ChangedRecordVC") {
+                
+                
+                if NSStringFromClass(self.classForCoder).contains("ChangedRecordVC") ||
+                    NSStringFromClass(self.classForCoder).contains("ServiceViewController") ||
+                    NSStringFromClass(self.classForCoder).contains("RigisterAgreeWebView") {
                     if nav > 2 {
                         CCog()
                         if NetStatusModel.netStatus == 0 {
@@ -79,8 +83,11 @@ extension WKBaseViewController {
         }
         
         // MARK: - 服务区ServiceViewController
-        if NSStringFromClass(self.classForCoder).contains("ServiceViewController") {}
-        if NSStringFromClass(self.classForCoder).contains("ServiceViewReplace") {}
+        if NSStringFromClass(self.classForCoder).contains("ServiceViewController") {
+            let vc = ServiceViewController()
+            vc.url = str
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         // MARK: - 支付失败PayFailViewController PaySuccessVC
         if NSStringFromClass(self.classForCoder).contains("PaySuccessVC") {}
@@ -105,6 +112,12 @@ extension WKBaseViewController {
         // MARK: - 交易明细 JiaoYIReplaceView  JiaoYIVC
         if NSStringFromClass(self.classForCoder).contains("JiaoYIVC") {}
         if NSStringFromClass(self.classForCoder).contains("JiaoYIReplaceView") {}
+        
+        if NSStringFromClass(self.classForCoder).contains("RigisterAgreeWebView") {
+            let vc = RigisterAgreeWebView()
+            vc.url = str
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         // MARK: - 分享视图 SharedVC  ShareReplaceView
     }
     
@@ -194,7 +207,7 @@ extension WKBaseViewController {
             }
         }
 
-        // MARK: - 购物车ShoppingViewController  ShoppingReplaceView  RepplaceVC
+        // MARK: - 购物车
         if NSStringFromClass(self.classForCoder).contains("ShoppingViewController") {
             
             CCog(message: self.url)
@@ -217,11 +230,30 @@ extension WKBaseViewController {
             }
         }
         
-        // MARK: - 服务区ServiceViewController
-        if NSStringFromClass(self.classForCoder).contains("ServiceViewController") {}
+        // MARK: - 服务区
+        if NSStringFromClass(self.classForCoder).contains("ServiceViewController") {
+            if navigationAction.navigationType == WKNavigationType.linkActivated {
+                
+                CCog(message: self.url)
+                
+                if self.url.contains(fwqURL) {
+                    
+                } else {
+                    self.url = commaddURl(adUrl: self.url)
+                    
+                    jumpComm(jumpVC: ServiceViewController(), str: self.url)
+                }
+                decisionHandler(.cancel)
+                
+            } else {
+                CCog(message: self.url)
+                commJump(yy: ServiceViewController())
+                decisionHandler(.allow)
+            }
+        }
         if NSStringFromClass(self.classForCoder).contains("ServiceViewReplace") {}
         
-        // MARK: - 支付失败PayFailViewController PaySuccessVC
+        // MARK: - 支付失败
         if NSStringFromClass(self.classForCoder).contains("PaySuccessVC") {
             if navigationAction.navigationType == WKNavigationType.linkActivated {
                 
@@ -290,6 +322,27 @@ extension WKBaseViewController {
         // MARK: - 交易明细 JiaoYIReplaceView  JiaoYIVC
         if NSStringFromClass(self.classForCoder).contains("JiaoYIVC") {}
         if NSStringFromClass(self.classForCoder).contains("JiaoYIReplaceView") {}
+        
+        if NSStringFromClass(self.classForCoder).contains("RigisterAgreeWebView") {
+            if navigationAction.navigationType == WKNavigationType.linkActivated {
+                
+                CCog(message: self.url)
+                
+                if self.url.contains(rigURL) {
+                    
+                } else {
+                    self.url = commaddURl(adUrl: self.url)
+                    
+                    jumpComm(jumpVC: RigisterAgreeWebView(), str: self.url)
+                }
+                decisionHandler(.cancel)
+                
+            } else {
+                CCog(message: self.url)
+                commJump(yy: RigisterAgreeWebView())
+                decisionHandler(.allow)
+            }
+        }
     }
     
     

@@ -251,45 +251,31 @@ extension MyVC {
     
     /// 积分
     func jumpToAccout() {
-        
-//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(AccountTableViewController(), animated: true)
-//        self.hidesBottomBarWhenPushed = false
     }
     
     
     /// 交易管理
     func cellOne() {
-//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ChangedRecordVC(), animated: true)
-//        self.hidesBottomBarWhenPushed = false
     }
     
     /// 收货地址
     func cellTwo() {
-//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(DetailAddressVC(), animated: true)
-//        self.hidesBottomBarWhenPushed = false
         
     }
     
     /// 帮助中心
     func cellThree() {
-//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ServiceViewController(), animated: true)
-//        self.hidesBottomBarWhenPushed = false
     }
     
     /// 设置
     func cellFour() {
         
-//        self.hidesBottomBarWhenPushed = true
-        
         let setVC = SettingViewController()
-        //        setVC.delegate = self
         self.navigationController?.pushViewController(setVC, animated: true)
-        
-//        self.hidesBottomBarWhenPushed = false
     }
     
 }

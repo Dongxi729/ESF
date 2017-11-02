@@ -34,7 +34,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     
     // MARK:- 全局链接变量
     var url : String = ""
-   
+    
     // MARK:- 为网络状态
     var netStatus : String = ""
     
@@ -76,9 +76,9 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     /// 断网图片单机刷新事件
     @objc func imgSEL() -> Void {
         
-//        view.addSubview(self.webView)
-//
-//        self.webView.load(self.urlRequestCache as URLRequest)
+        //        view.addSubview(self.webView)
+        //
+        //        self.webView.load(self.urlRequestCache as URLRequest)
         
         if isLoded {
             self.webView.reload()
@@ -93,7 +93,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         
         self.imgView.isHidden = true
         AutoCellularbtn.removeFromSuperview()
-    
+        
     }
     
     deinit {
@@ -104,8 +104,8 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
-
-
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -151,8 +151,8 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             }
             
         }
-    
-    
+        
+        
         //取出本地token，进行拼接,token为空不为空，均传到服务器
         if (localSave.object(forKey: userToken) != nil) {
             token = localSave.object(forKey: userToken) as! String
@@ -160,7 +160,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         } else {
             token = ""
         }
-    
+        
     }
     
     
@@ -241,7 +241,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             self.progressView.frame = CGRect.init(x: 0, y: 64, width: SW, height: 10)
             self.replaceView.frame = CGRect.init(x: 0, y: 0, width: SW, height: 64)
             self.replaceView.backgroundColor = commonBtnColor
-        
+            
             self.view.addSubview(self.replaceView)
         }
         
@@ -274,24 +274,24 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             }
         }
         
-
+        
         //赋值，表示失败，供刷新使用
         self.situationMark = "true"
         
         netStatus = "false"
-
+        
         refreshControl.endRefreshing()
-
+        
     }
     
-   var isLoded  = false
+    var isLoded  = false
     
     // MARK:- webview加载完成
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         isLoded = true
         CCog(message: isLoded)
         
-
+        
         self.imgView.isHidden = true
         
         UIView.animate(withDuration: 0.5) {
@@ -319,7 +319,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         }
         
         refreshControl.endRefreshing()
-       
+        
         ///允许交互
         self.webView.isUserInteractionEnabled = true
         
@@ -342,13 +342,13 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     }
     
     
-
+    
     
     // MARK:- js交互
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let msg = message.name
         
-
+        
         
         //微信分享
         if  msg == "shareWeixinInfo" {
@@ -368,7 +368,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             viewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             
             viewController.delegate = self
-
+            
             self.present(viewController, animated: true, completion: nil)
             
             
@@ -383,45 +383,45 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             //XFLog(message: wxDic)
             
             
-                ///微信支付
-                WXTool.shared.sendWXPay(wxDict: wxDic, _com: { (result) in
+            ///微信支付
+            WXTool.shared.sendWXPay(wxDict: wxDic, _com: { (result) in
+                
+                switch result {
+                case "-2":
+                    let vc = PayFailViewController()
+                    vc.url = payFailURL
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    break
+                    
+                case "0":
+                    let vc = PaySuccessVC()
+                    vc.url = paySuccessURL
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    break
+                    
+                case "-1":
+                    let vc = PayFailViewController()
+                    vc.url = payFailURL
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    break
+                    
+                default:
+                    break
+                }
+                
+                //清除URL保存的值
+                mainIndexArray.removeAllObjects()
+                fwqArray.removeAllObjects()
+                commuArray.removeAllObjects()
+                shoppingCarArray.removeAllObjects()
+                jiaoYIArray.removeAllObjects()
+                zhongjiangArray.removeAllObjects()
+                duihuanArray.removeAllObjects()
+                fenxiangArray.removeAllObjects()
+                
+            })
             
-                    switch result {
-                    case "-2":
-                        let vc = PayFailViewController()
-                        vc.url = payFailURL
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        break
-                        
-                    case "0":
-                        let vc = PaySuccessVC()
-                        vc.url = paySuccessURL
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        break
-                        
-                    case "-1":
-                        let vc = PayFailViewController()
-                        vc.url = payFailURL
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        break
-                        
-                    default:
-                        break
-                    }
-                    
-                    //清除URL保存的值
-                    mainIndexArray.removeAllObjects()
-                    fwqArray.removeAllObjects()
-                    commuArray.removeAllObjects()
-                    shoppingCarArray.removeAllObjects()
-                    jiaoYIArray.removeAllObjects()
-                    zhongjiangArray.removeAllObjects()
-                    duihuanArray.removeAllObjects()
-                    fenxiangArray.removeAllObjects()
-                    
-                })
-
-
+            
             ///支付宝
         } else if msg == "alipay" {
             let dic = message.body as! NSDictionary
@@ -437,13 +437,14 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             
             //接收Web支付回调
             PaymenyModel.shared.alipay(orderString: signStr, comfun: { (result) in
-
+                
                 
                 switch result {
                 case "用户中途取消":
-                    
-                    let vc = PayFailViewController()
-                    vc.url = payFailURL
+                    // FIXME: - 支付成功回调错误
+
+                    let vc = PaySuccessVC()
+                    vc.url = paySuccessURL
                     self.navigationController?.pushViewController(vc, animated: true)
                     break
                     
@@ -472,7 +473,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                     break
                 }
                 
-
+                
                 //清除URL保存的值
                 mainIndexArray.removeAllObjects()
                 fwqArray.removeAllObjects()
@@ -492,14 +493,10 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             jumpToShop()
         } else if msg == "login" {
             
-            self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(LoginView(), animated: true)
-            self.hidesBottomBarWhenPushed = false
-            
-            shoppingCarArray.add(message.body)
             
         } else if msg == "submit" {
-
+            
             self.wkDelegate?.server()
             
         } else if msg == "detailRocord" {
@@ -507,21 +504,21 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             jumpDetaiRecord()
             
         } else if msg == "backToMain" {
-
+            
             backToMain()
-        
+            
             //调到购物车
         } else if msg == "getCartList" {
             
             shopList = message.body as? String
-
             
-        ///选择地址
+            
+            ///选择地址
         } else if msg == "chooseAddress" {
             
             
             NotificationCenter.default.addObserver(self, selector: #selector(chuangei(notification:)), name: NSNotification.Name(rawValue: "addressSet"), object: nil)
-        
+            
             self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(DetailAddressVC(), animated: true)
             
@@ -536,7 +533,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             gotoMain()
         } else if msg == "call" {
             XFLog(message: message.body)
-        
+            
             if let callStr = message.body as? String {
                 self.call(callNum: callStr)
             }
@@ -555,7 +552,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     // MARK:- 收货地址@objc
     @objc func chuangei(notification : Notification) -> Void {
         
-         let dic = notification.userInfo
+        let dic = notification.userInfo
         
         let _adrid = dic?["adrid"] as! String
         
@@ -565,30 +562,30 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         ///名字
         let _name = dic?["name"] as! String
         let yinhaoname = "\"" + _name + "\""
-
+        
         
         let _tel = dic?["tel"] as! String
         let yintel = "\"" + _tel + "\""
-
+        
         
         let _area = dic?["area"] as! String
         let yinarea = "\"" + _area + "\""
-
+        
         
         let _address = dic?["address"] as! String
         let yinaddress = "\"" + _address + "\""
-
+        
         
         let jsonStr : NSString = "{\("\"adrid\"") : \(yinhaoadrid),\("\"name\"") : \(yinhaoname),\("\"tel\"") : \(yintel),\("\"area\"") : \(yinarea),\("\"address\"") : \(yinaddress)}" as NSString
-       
+        
         self.webView.evaluateJavaScript("addrCheck('\(jsonStr)')", completionHandler: nil)
-
+        
         if self.navigationController == nil {
             return
         } else {
             
         }
-
+        
         //地址收获的刷新标识
         _symbolForH5chosssedef = "true"
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "addressSet"), object: nil)
@@ -648,75 +645,6 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             CCog(message: self.url)
             sender.endRefreshing()
         }
-
-//        if sender.isRefreshing == true {
-//            self.view.isUserInteractionEnabled = false
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-//                self.view.isUserInteractionEnabled = true
-//            })
-//        }
-//
-//
-//        if !netThrough {
-//            sender.endRefreshing()
-//        } else {
-//            if self.webView == nil {
-//
-//                sender.endRefreshing()
-//
-//                let mainVC = MainViewController()
-//                UIApplication.shared.keyWindow?.rootViewController = mainVC
-//
-//                let tabBarController = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
-//                tabBarController.selectedIndex = 0
-//
-//            } else if self.situationMark == "true" {
-//
-//                //网络标识为没网络，从先前浏览过的网页记录进行查找
-//                if mainIndexArray.lastObject != nil {
-//                    self.webView.load(URLRequest.init(url: URL.init(string: mainIndexArray.lastObject as! String)!))
-//
-//                } else if shoppingCarArray.lastObject != nil {
-//                    self.webView.load(URLRequest.init(url: URL.init(string: shoppingCarArray.lastObject as! String)!))
-//
-//                } else if separateArrey.lastObject != nil {
-//                    self.webView.load(URLRequest.init(url: URL.init(string: separateArrey.lastObject as! String)!))
-//                } else {
-//                    //清除URL保存的值
-//                    mainIndexArray.removeAllObjects()
-//                    fwqArray.removeAllObjects()
-//                    commuArray.removeAllObjects()
-//                    shoppingCarArray.removeAllObjects()
-//                    jiaoYIArray.removeAllObjects()
-//                    zhongjiangArray.removeAllObjects()
-//                    duihuanArray.removeAllObjects()
-//                    fenxiangArray.removeAllObjects()
-//
-//                    let mainVc = MainViewController()
-//                    UIApplication.shared.keyWindow?.rootViewController = mainVc
-//                }
-//
-//
-//            } else if self.situationMark != "true" {
-//
-//                self.webView.removeFromSuperview()
-//
-//                self.webView.reload()
-//
-//                self.view.addSubview(self.webView)
-//
-//                sender.endRefreshing()
-//            }
-//
-//        }
-//        if !netThrough {
-//            sender.endRefreshing()
-//
-//        } else {
-//
-//            //判断是否存在网页，若有，则刷新，没有则不刷新
-//        }
     }
 }
 
@@ -728,7 +656,7 @@ extension WKBaseViewController {
         
         switch __data {
         case 100:
-
+            
             if !netThrough {
                 MBManager.hideAlert()
                 
@@ -744,9 +672,9 @@ extension WKBaseViewController {
                 
             }
             
-
+            
         case 101:
-
+            
             if !netThrough {
                 
                 MBManager.hideAlert()
@@ -810,7 +738,7 @@ extension WKBaseViewController {
         self.webView = nil
     }
     
-
+    
 }
 
 // MARK:- 购物车交互事件
@@ -870,7 +798,7 @@ extension WKBaseViewController {
         default:
             break
         }
-
+        
         //清除URL保存的值
         mainIndexArray.removeAllObjects()
         fwqArray.removeAllObjects()
@@ -880,8 +808,8 @@ extension WKBaseViewController {
         zhongjiangArray.removeAllObjects()
         duihuanArray.removeAllObjects()
         fenxiangArray.removeAllObjects()
-
-
+        
+        
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "123"), object: nil)
     }
 }
@@ -896,7 +824,7 @@ extension WKBaseViewController {
         self.hidesBottomBarWhenPushed = false
         
     }
-
+    
 }
 
 // MARK:- 设置webview
@@ -1003,8 +931,8 @@ extension WKBaseViewController {
                 
             }
         }
-    
-
+        
+        
         
         ///配置wkwebview代理
         webView.uiDelegate = self
