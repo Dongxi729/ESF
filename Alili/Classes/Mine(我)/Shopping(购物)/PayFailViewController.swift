@@ -14,18 +14,8 @@ class PayFailViewController: WKBaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-    
-        if self.webView == nil {
-            self.title = "支付"
-            return
-        } else {
-            //支付成功路径
-            let urlStr : URL = URL.init(string: payFailURL)!
-            
-            self.urlRequestCache = NSURLRequest.init(url: urlStr)
-            
-            self.webView.load(self.urlRequestCache as URLRequest)
-        }
+        loadFirst(loadURl: self.url, firstUrl: payFailURL)
+//        webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: payFailURL))!))
     }
 
     override func didReceiveMemoryWarning() {

@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ///设置主启动界面
         setMainBar()
         
+
+        AFNetworkReachabilityManager.shared().startMonitoring()
+        AFNetworkReachabilityManager.shared().setReachabilityStatusChange { (sddd) in
+            CCog(message: sddd.rawValue)
+        }
+        
         return true
     }
 }

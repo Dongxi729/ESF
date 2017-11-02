@@ -42,81 +42,9 @@ class ChangedRecordVC: WKBaseViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationItem.title = "兑换记录"
-        
-        
-        if duihuanArray.count > 1 {
-            let urlStr = duihuanArray.lastObject
-            
-            webView.load(URLRequest.init(url: URL.init(string: urlStr as! String)!))
-            
-        } else {
-            DispatchQueue.main.async {
-                
-                let urlStr = changeRocordURL + "?devtype=1" + "&token=" + self.token
+    
+        loadFirst(loadURl: self.url, firstUrl: changeRocordURL)
 
-                if urlStr.contains(comStrURL) {
-                    let url = URL.init(string: urlStr)
-                    if self.netThrough {
-                        DispatchQueue.main.async {
-                            
-                            self.urlRequestCache = NSURLRequest.init(url: url!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 0)
-                            self.webView.load(self.urlRequestCache as URLRequest)
-                            
-                            
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            
-                            self.urlRequestCache = NSURLRequest(url: url!, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 10)
-                            self.webView.load(self.urlRequestCache as URLRequest)
-                            
-                        }
-                    }
-
-                } else {
-                    CustomAlertView.shared.alertWithTitle(strTitle: "请下拉刷新")
-                }
-
-            }
-            
-        }
-        
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        url = (navigationAction.request.url?.absoluteString)!
-        
-        
-        if navigationAction.navigationType == WKNavigationType.linkActivated {
-            
-            
-            if self.url.contains("?") {
-                self.url = self.url + ("&devtype=1&token=") + (token)
-            } else {
-                self.url = self.url + ("?devtype=1&token=") + (token)
-            }
-            
-            duihuanArray.add(url)
-            aaa(str: duihuanArray.lastObject as! String)
-        
-            decisionHandler(.cancel)
-            
-        } else {
-            decisionHandler(.allow)
-        }
-    }
-    
-    //url---
-    func aaa(str : String) -> Void {
-        
-        let vvv = ChangedReplaceView()
-        vvv.url = str
-        
-        self.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vvv, animated: true)
-//        self.hidesBottomBarWhenPushed = false
-        
-    }
-
 }

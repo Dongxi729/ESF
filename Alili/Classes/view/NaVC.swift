@@ -10,16 +10,16 @@ import UIKit
 
 class NaVC: UINavigationController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
-//        self.navigationBar.barTintColor = commonBtnColor
+        if viewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+        } else {
+            viewController.hidesBottomBarWhenPushed = false
+        }
         
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        
-//        UINavigationBar.appearance().isTranslucent = false
+        super.pushViewController(viewController, animated: animated)
     }
 
 }

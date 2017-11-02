@@ -13,7 +13,7 @@ class PersonInfoViewController: BaseViewController {
     //cell的文字
     var headImgLabel: UILabel = {
         let lab = UILabel()
-        lab.frame = CGRect(x: 15, y: 15 + 64, width: 0, height: 30)
+        lab.frame = CGRect(x: 15, y: 15 + 0, width: 0, height: 30)
         lab.text = "头像"
         lab.sizeToFit()
         lab.font = UIFont.boldSystemFont(ofSize: 14)
@@ -26,7 +26,7 @@ class PersonInfoViewController: BaseViewController {
     //分割线
     lazy var line : UIView = {
         let lin = UIView()
-        lin.frame = CGRect(x: 0, y: 60 + 64, width: UIScreen.main.bounds.size.width, height: 0.5)
+        lin.frame = CGRect(x: 0, y: 60 + 0, width: UIScreen.main.bounds.size.width, height: 0.5)
         lin.backgroundColor = UIColor.lightGray
         return lin
     }()
@@ -35,7 +35,7 @@ class PersonInfoViewController: BaseViewController {
     lazy var headImg : UIImageView = {
         let img = UIImageView()
 //        img.backgroundColor = UIColor.orange
-        img.frame = CGRect(x: SW - 15 - 50, y: 5 + 64, width: 50, height: 50)
+        img.frame = CGRect(x: SW - 15 - 50, y: 5 + 0, width: 50, height: 50)
 //        img.backgroundColor = UIColor.orange
         
         //裁剪图片
@@ -54,7 +54,7 @@ class PersonInfoViewController: BaseViewController {
     //昵称
     lazy var nickName : UILabel = {
         let lab = UILabel()
-        lab.frame = CGRect(x: 15, y: 75 + 64, width: 80, height: 30)
+        lab.frame = CGRect(x: 15, y: 75 + 0, width: 80, height: 30)
         
         lab.font = UIFont.boldSystemFont(ofSize: 14)
         //文字左对齐
@@ -68,7 +68,7 @@ class PersonInfoViewController: BaseViewController {
     //昵称
     lazy var tfNickName : TfPlaceHolder = {
         let lab = TfPlaceHolder()
-//        lab.frame = CGRect(x:  SW - 15 * 2, y: 75 + 64, width: 180, height: 30)
+//        lab.frame = CGRect(x:  SW - 15 * 2, y: 75 + 0, width: 180, height: 30)
 //        
 //        //文字左对齐
 //        lab.textAlignment = NSTextAlignment.right
@@ -85,7 +85,7 @@ class PersonInfoViewController: BaseViewController {
     lazy var bgView : UIView = {
         let view = UIView()
         
-        view.frame = CGRect(x: 0, y: 64, width: SW, height: 70 + 44)
+        view.frame = CGRect(x: 0, y: 0, width: SW, height: 70 + 44)
         view.backgroundColor = UIColor.white
         return view
     }()
@@ -146,14 +146,13 @@ class PersonInfoViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
 }
 
 
 extension PersonInfoViewController {
     func setUI() -> Void {
         
-        tfNickName.frame = CGRect(x: nickName.RightX + 15, y: 75 + 64, width: SW - nickName.Width - 45, height: 20)
+        tfNickName.frame = CGRect(x: nickName.RightX + 15, y: 75 + 0, width: SW - nickName.Width - 45, height: 20)
         
         //文字左对齐
         tfNickName.textAlignment = NSTextAlignment.right
@@ -264,8 +263,8 @@ extension PersonInfoViewController {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: {
                     CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
                         logoutModel.shared.logoutSEL(comfun: { (result) in
-                
-                            logoutModel.shared.logoutWithOutAlert()
+                            let nav = NaVC.init(rootViewController: LoginView())
+                            UIApplication.shared.keyWindow?.rootViewController = nav
                         })
                     })
 

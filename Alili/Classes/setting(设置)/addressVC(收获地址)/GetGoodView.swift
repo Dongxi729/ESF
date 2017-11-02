@@ -437,9 +437,8 @@ extension GetGoodView {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: { 
                     
                     CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: { 
-                        logoutModel.shared.logoutWithOutAlert()
-                        
-                        nav?.navigationController?.pushViewController(LoginView(), animated: true)
+                        let nav = NaVC.init(rootViewController: LoginView())
+                        UIApplication.shared.keyWindow?.rootViewController = nav
                     })
                 })
 

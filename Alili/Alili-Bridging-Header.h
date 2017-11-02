@@ -33,6 +33,7 @@
 //第三方textView -- MYQPlaceholderTextView.h
 #import "MYQPlaceholderTextView.h"
 
+#import "IQKeyboardManager.h"
 
 #import "FYLoginTranslation.h"
 
@@ -53,9 +54,6 @@
 
 
 #import "LabelAnimated.h"
-
-
-//#import "Reachability.h"
 
 
 #import "AFNetworking.h"

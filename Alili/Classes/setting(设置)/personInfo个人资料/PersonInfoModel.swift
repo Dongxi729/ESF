@@ -132,9 +132,8 @@ class PersonInfoModel: NSObject {
                             
                             //刷新猪控制器
                             CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
-                                
-                                logoutModel.shared.logoutWithOutAlert()
-                                
+                                let nav = NaVC.init(rootViewController: LoginView())
+                                UIApplication.shared.keyWindow?.rootViewController = nav
                             })
                         }
                         

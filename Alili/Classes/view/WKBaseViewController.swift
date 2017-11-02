@@ -76,15 +76,22 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     /// 断网图片单机刷新事件
     @objc func imgSEL() -> Void {
         
-        view.addSubview(self.webView)
+//        view.addSubview(self.webView)
+//
+//        self.webView.load(self.urlRequestCache as URLRequest)
         
-        self.webView.load(self.urlRequestCache as URLRequest)
+        if isLoded {
+            self.webView.reload()
+        } else {
+            self.webView.load(URLRequest.init(url: URL.init(string: self.url)!))
+        }
     }
     
     // MARK:- 移除蜂窝权限图片，界面消失的时候
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.imgView.isHidden = true
         AutoCellularbtn.removeFromSuperview()
     
     }
@@ -98,9 +105,13 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         view.endEditing(true)
     }
 
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        
         if #available(iOS 9.0, *) {
             
             let culluarData = CTCellularData()
@@ -153,11 +164,22 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.SETUI()
         
         lisetenNetChanged()
+        
+        self.imgView.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
+        self.imgView.center = view.center
+        self.imgView.image = #imageLiteral(resourceName: "lostNet")
+        let tag = UITapGestureRecognizer.init(target: self, action:#selector(WKBaseViewController.imgSEL))
+        self.imgView.isUserInteractionEnabled = true
+        self.imgView.addGestureRecognizer(tag)
+        view.addSubview(imgView)
+        self.imgView.isHidden = true
+        
         
         if let navCount = self.navigationController?.viewControllers.count {
             
@@ -208,24 +230,11 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             
             progressView.isHidden = webView.estimatedProgress == 1
             progressView.setProgress(Float(webView.estimatedProgress), animated: true)
-
-            if self.replaceView.frame.width != 0 {
-                if webView.estimatedProgress == 0.3 {
-                    self.replaceView.isHidden = true
-                }
-            }
         }
     }
     
     // MARK:- 网络开始请求
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-       
-        
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        }
-
-        
         let tababrVC = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController
         
         if tababrVC?.selectedIndex == 0 && self.navigationController?.childViewControllers.count == 1 {
@@ -252,41 +261,38 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     /// 没网络发起
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         
-        XFLog(message: "")
+        CCog(message: NetStatusModel.netStatus)
         
-        self.webView.isUserInteractionEnabled = true
+        if NetStatusModel.netStatus == 0 {
+            if let webTitle = webView.title {
+                if webTitle.characters.count == 0 {
+                    CCog()
+                    self.imgView.isHidden = false
+                } else {
+                    CCog()
+                }
+            }
+        }
+        
 
         //赋值，表示失败，供刷新使用
         self.situationMark = "true"
         
         netStatus = "false"
-        
-        self.setNetFail()
-        if !netThrough {
-            self.imgView.image = UIImage.init(named: "lostNet")
-            self.view.addSubview(self.imgView)
-            
-        } else {
-            return
-        }
-        refreshControl.endRefreshing()
 
+        refreshControl.endRefreshing()
 
     }
     
-    // MARK:- 允许拦截
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        
-        decisionHandler(.allow)
-    }
+   var isLoded  = false
     
     // MARK:- webview加载完成
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        isLoded = true
+        CCog(message: isLoded)
         
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
 
+        self.imgView.isHidden = true
         
         UIView.animate(withDuration: 0.5) {
             
@@ -302,8 +308,6 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                 self.view.addSubview(self.compassView)
                 self.compassView.alpha = 1
             }
-            
-            
         }
         
         
@@ -312,13 +316,10 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         if tababrVC?.selectedIndex == 0 && self.navigationController?.childViewControllers.count == 1 {
             
             self.replaceView.isHidden = true
-//            self.replaceView.backgroundColor = commonBtnColor
         }
         
         refreshControl.endRefreshing()
-        
-        
-        
+       
         ///允许交互
         self.webView.isUserInteractionEnabled = true
         
@@ -326,12 +327,6 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         self.situationMark = "false"
         
         netStatus = "true"
-        
-        //移除没有网络提示图片
-        DispatchQueue.main.async {
-            self.imgView.removeFromSuperview()
-        }
-        
         
         self.progressView.progress = Float(webView.estimatedProgress)
         self.navigationItem.title = self.webView.title
@@ -393,17 +388,21 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             
                     switch result {
                     case "-2":
-                        
-                        self.navigationController?.pushViewController(PayFailViewController(), animated: true)
+                        let vc = PayFailViewController()
+                        vc.url = payFailURL
+                        self.navigationController?.pushViewController(vc, animated: true)
                         break
                         
                     case "0":
-                        
-                        self.navigationController?.pushViewController(PaySuccessVC(), animated: true)
+                        let vc = PaySuccessVC()
+                        vc.url = paySuccessURL
+                        self.navigationController?.pushViewController(vc, animated: true)
                         break
                         
                     case "-1":
-                        self.navigationController?.pushViewController(PayFailViewController(), animated: true)
+                        let vc = PayFailViewController()
+                        vc.url = payFailURL
+                        self.navigationController?.pushViewController(vc, animated: true)
                         break
                         
                     default:
@@ -443,12 +442,16 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                 switch result {
                 case "用户中途取消":
                     
-                    self.navigationController?.pushViewController(PayFailViewController(), animated: true)
+                    let vc = PayFailViewController()
+                    vc.url = payFailURL
+                    self.navigationController?.pushViewController(vc, animated: true)
                     break
                     
                 case "网页支付成功":
                     
-                    self.navigationController?.pushViewController(PaySuccessVC(), animated: true)
+                    let vc = PaySuccessVC()
+                    vc.url = paySuccessURL
+                    self.navigationController?.pushViewController(vc, animated: true)
                     break
                     
                 case "正在处理中":
@@ -461,7 +464,9 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                     break
                     
                 case "订单支付失败":
-                    self.navigationController?.pushViewController(PayFailViewController(), animated: true)
+                    let vc = PayFailViewController()
+                    vc.url = payFailURL
+                    self.navigationController?.pushViewController(vc, animated: true)
                     break
                 default:
                     break
@@ -531,8 +536,20 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             gotoMain()
         } else if msg == "call" {
             XFLog(message: message.body)
-        }
         
+            if let callStr = message.body as? String {
+                self.call(callNum: callStr)
+            }
+        }
+    }
+    
+    @objc func call(callNum :String) {
+        let alettVC = ZDXAlertController.init(title: "", message:"是否拨打此电话 \(callNum)", preferredStyle: .alert)
+        alettVC.addAction(UIAlertAction.init(title: "好的", style: .default, handler: { (action) in
+            UIApplication.shared.openURL(URL.init(string: "tel:" + callNum)!)
+        }))
+        alettVC.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
+        navigationController?.present(alettVC, animated: true, completion: nil)
     }
     
     // MARK:- 收货地址@objc
@@ -622,75 +639,84 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     
     // MARK:- 刷新函数
     @objc func refreshWebView(sender: UIRefreshControl) {
+        
+        if isLoded {
+            self.webView.reload()
+            sender.endRefreshing()
+        } else {
+            self.webView.load(URLRequest.init(url: URL.init(string: self.url)!))
+            CCog(message: self.url)
+            sender.endRefreshing()
+        }
 
-        if sender.isRefreshing == true {
-            self.view.isUserInteractionEnabled = false
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                self.view.isUserInteractionEnabled = true
-            })
-        }
-        
-        
-        if !netThrough {
-            sender.endRefreshing()
-        } else {
-            if self.webView == nil {
-                
-                sender.endRefreshing()
-                
-                let mainVC = MainViewController()
-                UIApplication.shared.keyWindow?.rootViewController = mainVC
-                
-                let tabBarController = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
-                tabBarController.selectedIndex = 0
-                
-            } else if self.situationMark == "true" {
-                
-                //网络标识为没网络，从先前浏览过的网页记录进行查找
-                if mainIndexArray.lastObject != nil {
-                    self.webView.load(URLRequest.init(url: URL.init(string: mainIndexArray.lastObject as! String)!))
-                    
-                } else if shoppingCarArray.lastObject != nil {
-                    self.webView.load(URLRequest.init(url: URL.init(string: shoppingCarArray.lastObject as! String)!))
-                    
-                } else if separateArrey.lastObject != nil {
-                    self.webView.load(URLRequest.init(url: URL.init(string: separateArrey.lastObject as! String)!))
-                } else {
-                    //清除URL保存的值
-                    mainIndexArray.removeAllObjects()
-                    fwqArray.removeAllObjects()
-                    commuArray.removeAllObjects()
-                    shoppingCarArray.removeAllObjects()
-                    jiaoYIArray.removeAllObjects()
-                    zhongjiangArray.removeAllObjects()
-                    duihuanArray.removeAllObjects()
-                    fenxiangArray.removeAllObjects()
-                    
-                    let mainVc = MainViewController()
-                    UIApplication.shared.keyWindow?.rootViewController = mainVc
-                }
-                
-                
-            } else if self.situationMark != "true" {
-                
-                self.webView.removeFromSuperview()
-                
-                self.webView.reload()
-                
-                self.view.addSubview(self.webView)
-                
-                sender.endRefreshing()
-            }
-            
-        }
-        if !netThrough {
-            sender.endRefreshing()
-            
-        } else {
-            
-            //判断是否存在网页，若有，则刷新，没有则不刷新
-        }
+//        if sender.isRefreshing == true {
+//            self.view.isUserInteractionEnabled = false
+//
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+//                self.view.isUserInteractionEnabled = true
+//            })
+//        }
+//
+//
+//        if !netThrough {
+//            sender.endRefreshing()
+//        } else {
+//            if self.webView == nil {
+//
+//                sender.endRefreshing()
+//
+//                let mainVC = MainViewController()
+//                UIApplication.shared.keyWindow?.rootViewController = mainVC
+//
+//                let tabBarController = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
+//                tabBarController.selectedIndex = 0
+//
+//            } else if self.situationMark == "true" {
+//
+//                //网络标识为没网络，从先前浏览过的网页记录进行查找
+//                if mainIndexArray.lastObject != nil {
+//                    self.webView.load(URLRequest.init(url: URL.init(string: mainIndexArray.lastObject as! String)!))
+//
+//                } else if shoppingCarArray.lastObject != nil {
+//                    self.webView.load(URLRequest.init(url: URL.init(string: shoppingCarArray.lastObject as! String)!))
+//
+//                } else if separateArrey.lastObject != nil {
+//                    self.webView.load(URLRequest.init(url: URL.init(string: separateArrey.lastObject as! String)!))
+//                } else {
+//                    //清除URL保存的值
+//                    mainIndexArray.removeAllObjects()
+//                    fwqArray.removeAllObjects()
+//                    commuArray.removeAllObjects()
+//                    shoppingCarArray.removeAllObjects()
+//                    jiaoYIArray.removeAllObjects()
+//                    zhongjiangArray.removeAllObjects()
+//                    duihuanArray.removeAllObjects()
+//                    fenxiangArray.removeAllObjects()
+//
+//                    let mainVc = MainViewController()
+//                    UIApplication.shared.keyWindow?.rootViewController = mainVc
+//                }
+//
+//
+//            } else if self.situationMark != "true" {
+//
+//                self.webView.removeFromSuperview()
+//
+//                self.webView.reload()
+//
+//                self.view.addSubview(self.webView)
+//
+//                sender.endRefreshing()
+//            }
+//
+//        }
+//        if !netThrough {
+//            sender.endRefreshing()
+//
+//        } else {
+//
+//            //判断是否存在网页，若有，则刷新，没有则不刷新
+//        }
     }
 }
 
@@ -1003,7 +1029,7 @@ extension WKBaseViewController {
         self.progressView.progressTintColor = UIColor.orange
         
         
-        //添加刷新控件
+        //添加刷新控件8
         self.refreshControl = UIRefreshControl()
         
         //设置刷新控件的位置
@@ -1018,27 +1044,6 @@ extension WKBaseViewController {
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil) // add observer for key path
     }
 }
-
-// MARK:- 设置没网络图片
-extension WKBaseViewController {
-    func setNetFail() -> Void {
-        imgView = UIImageView()
-        
-        //手动设置没网络图片位置
-        imgView.frame = CGRect(x:SW * 0.25 , y: SH * 0.25, width: SW * 0.5, height: SW * 0.5)
-        
-        imgView.image = UIImage.init(named: "lofstNet")
-        
-        imgView.contentMode = UIViewContentMode.scaleAspectFit
-        
-        let tag = UITapGestureRecognizer.init(target: self, action:#selector(WKBaseViewController.imgSEL))
-        
-        imgView.isUserInteractionEnabled = true
-        
-        imgView.addGestureRecognizer(tag)
-    }
-}
-
 
 class LeakAvoider : NSObject, WKScriptMessageHandler {
     weak var delegate : WKScriptMessageHandler?

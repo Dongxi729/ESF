@@ -47,6 +47,8 @@ class SettingViewController: TableBaseViewController,SettingCellDelegate,UIViewC
         self.navigationController?.navigationBar.isHidden = false
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        
         //禁用返回手势
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
@@ -420,8 +422,7 @@ extension SettingViewController {
     
     
     func logoutSel() {
-        let alert = UIAlertController.init(title: "提示", message: "您确定退出么?", preferredStyle: .alert)
-        
+        let alert = ZDXAlertController.init(title: "提示", message: "您确定退出么?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction.init(title: "退出", style: .destructive, handler: { (nil) in
             
@@ -439,9 +440,6 @@ extension SettingViewController {
                         UserDefaults.standard.removePersistentDomain(forName: appDomain)
                     }
                     
-
-
-             
                     DispatchQueue.main.async {
                         let mainVC = MainViewController()
     

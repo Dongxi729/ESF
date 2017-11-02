@@ -193,9 +193,8 @@ class WXLogin: NSObject {
                         
                         //刷新猪控制器
                         CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
-                            
-                            logoutModel.shared.logoutWithOutAlert()
-                            
+                            let nav = NaVC.init(rootViewController: LoginView())
+                            UIApplication.shared.keyWindow?.rootViewController = nav
                         })
                     }
                     
@@ -291,12 +290,6 @@ class WXLogin: NSObject {
                 }
                 
                 let token = tokenData["token"] as! String
-
-                
-                //获取登陆个人信息
-//                print((dic["data"] as! NSDictionary)["address"] as! NSDictionary)
-//                print((dic["data"] as! NSDictionary)["user"] as! NSDictionary)
-                
                 
                 guard let list = (dic["data"] as? NSDictionary)?["user"] as? NSDictionary else {
                     return

@@ -29,10 +29,16 @@ class logoutModel: NSObject {
             
 
             postWithPath(path: logoutURL, paras: param, success: { (response) in
+                
+                CCog(message: response)
+                
+            
+                
                 //判读返回值是否为空
                 guard let dic = response as? NSDictionary else {
                     return
                 }
+                
 
                 //提取提示语
                 let resultCode = dic["resultcode"] as! String
@@ -44,7 +50,6 @@ class logoutModel: NSObject {
                     
                     
                     if alertmsg  == "退出成功" {
-                        
                         
                         CustomAlertView.shared.dissmiss()
 
@@ -162,9 +167,8 @@ class logoutModel: NSObject {
                             
                             //刷新猪控制器
                             CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
-                                
-                                logoutModel.shared.logoutWithOutAlert()
-                                
+                                let nav = NaVC.init(rootViewController: LoginView())
+                                UIApplication.shared.keyWindow?.rootViewController = nav
                             })
                         }
                         

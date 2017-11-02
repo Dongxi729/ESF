@@ -87,7 +87,7 @@ class ServiceViewController: WKBaseViewController,WKBaseDelegate {
     
      /// 地址请求拦截
      ///
-     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    override func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         url = (navigationAction.request.url?.absoluteString)!
         

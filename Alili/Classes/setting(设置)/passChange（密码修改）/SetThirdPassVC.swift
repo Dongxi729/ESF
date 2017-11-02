@@ -173,10 +173,8 @@ extension SetThirdPassVC {
                     
                     CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
                         logoutModel.shared.logoutSEL(comfun: { (result) in
-
-                            //XFLog(message: result)
-
-                            logoutModel.shared.logoutWithOutAlert()
+                            let nav = NaVC.init(rootViewController: LoginView())
+                            UIApplication.shared.keyWindow?.rootViewController = nav
                         })
                     })
                 }

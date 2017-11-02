@@ -11,9 +11,13 @@ import Foundation
 // MARK:- 域名(拼商城)
 //let comStrURL = "yungou.ie1e.com"
 
-// MARK:- 域名(锐掌商城)
-//let comStrURL = "shop.ie1e.com"
 let comStrURL = "esf.ie1e.com"
+//#if DEBUG
+//let comStrURL = "shenyouhui.ie1e.com"
+//#else
+//let comStrURL = "www.shenyouhui.com"
+//#endif
+
 
 //微信app id
 //let app_key = "wx3196a5707637b3f5"
@@ -32,7 +36,6 @@ let UMENG_APPKEY = "587848c5e88bad40f7002702"
 //微信应用app iD
 //wxb4ba3c02aa476ea1
 //let WXPatient_App_ID = "wxb4ba3c02aa476ea1"
-
 let WXPatient_App_ID = "wx72ef50bd213b7232"
 let WXPatient_App_Secret = "fca39841591b0823da05b59bfb77f0a1"
 ///商户ID
@@ -125,7 +128,7 @@ let setacctURL = "\(urlPrefix)\("setacct.ashx")"
 let integrallogURL = "\(urlPrefix)\("integrallog.ashx")"
 
 ///购物车
-let shooppingCarURL = "http://\(comStrURL)/app/cart.aspx?from=mini"
+let shooppingCarURL = "http://\(comStrURL)/app/cart.aspx"
 
 ///交易明细
 let jiaoyiURL = "http://\(comStrURL)/app/user_jymx.aspx"
@@ -153,6 +156,9 @@ let rigURL = "http://\(comStrURL)/app/fwq_list_edit.aspx?id=1"
 
 /// 分类链接
 let category_URL = "http://\(comStrURL)/app/catalogue.aspx"
+
+/// 首页链接
+let firPage_URL = "http://\(comStrURL)/app/index.aspx"
 
 // MARK:- 提示语
 //提示语
@@ -319,7 +325,7 @@ let bindPhoneSuc = "bindPhoneSuc"
 let commonBgColor = UIColor.init(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
 
 ///统一按钮颜色
-let commonBtnColor = UIColor.init(red: 239/255, green: 106/255, blue: 46/255, alpha: 1)
+let commonBtnColor = UIColor.init(red: 241/255, green: 83/255, blue: 83/255, alpha: 1)
 
 
 

@@ -40,20 +40,19 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        
-        
+
         if SH == 812 {
             
-            
+            if let nav = navigationController {
+                if nav.viewControllers.count > 1 {
+                    nav.navigationBar.barTintColor = UIColor.white
+                }
+            }
             self.navigationController?.navigationBar.isHidden = true
             
             ///状态栏背景色
             self.navigationController?.navigationBar.barTintColor = commonBtnColor
-            
-            
-            //文字颜色
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-            
+
             UIApplication.shared.statusBarStyle = .lightContent
             
         } else {
@@ -82,7 +81,6 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
             //设置导航栏背景颜色透明
             UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
             
-            CCog(message: PersonInfoModel.shared.personImg)
             
             //若单例中没有值，则从缓存字典中取值
             if PersonInfoModel.shared.personImg != nil {
@@ -154,9 +152,9 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
                 //文字颜色
                 self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
                 
-                self.hidesBottomBarWhenPushed = true
+//                self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(LoginView(), animated: true)
-                self.hidesBottomBarWhenPushed = false
+//                self.hidesBottomBarWhenPushed = false
             }))
             
             self.present(alertView, animated: true, completion: nil)
@@ -254,44 +252,44 @@ extension MyVC {
     /// 积分
     func jumpToAccout() {
         
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(AccountTableViewController(), animated: true)
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
     }
     
     
     /// 交易管理
     func cellOne() {
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ChangedRecordVC(), animated: true)
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
     }
     
     /// 收货地址
     func cellTwo() {
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(DetailAddressVC(), animated: true)
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
         
     }
     
     /// 帮助中心
     func cellThree() {
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ServiceViewController(), animated: true)
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
     }
     
     /// 设置
     func cellFour() {
         
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         
         let setVC = SettingViewController()
         //        setVC.delegate = self
         self.navigationController?.pushViewController(setVC, animated: true)
         
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
     }
     
 }
@@ -385,16 +383,16 @@ extension MyVC {
 extension MyVC {
     ///待付款 -- JiaoYIVC
     func jumpTopay() {
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ChangedRecordVC(), animated: true)
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
     }
     
     ///待发货 -- 调到指定的子页面JS交互
     func jumpTosend() {
         //XFLog(message: "待发货")
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(ChangedRecordVC(), animated: true)
-        self.hidesBottomBarWhenPushed = false
+//        self.hidesBottomBarWhenPushed = false
     }
 }

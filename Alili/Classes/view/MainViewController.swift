@@ -32,12 +32,12 @@ extension MainViewController {
     func setUpSubViews() -> Void {
         
         //为每个子页面独立添加导航栏
-        let mainPageVC = UINavigationController.init(rootViewController: MainPageViewController())
+        let mainPageVC = NaVC.init(rootViewController: MainPageViewController())
         
         //禁用半透明
         mainPageVC.navigationBar.isTranslucent = false
 
-        let shopVc = UINavigationController.init(rootViewController: ShoppingViewController())
+        let shopVc = NaVC.init(rootViewController: ShoppingViewController())
         //禁用半透明
         shopVc.navigationBar.isTranslucent = false
         
@@ -54,9 +54,9 @@ extension MainViewController {
         }
         
         //我的模块
-        let meVC = UINavigationController.init(rootViewController: MyVC())
-        //禁用半透明
-//        meVC.navigationBar.isTranslucent = false
+        let meVC = NaVC.init(rootViewController: MyVC())
+        meVC.navigationBar.isTranslucent = false
+        
         
         self.setupChildVC(mainPageVC, title: "首页", imageName: "nav_1", selectImageName: "nav_1_on")
 

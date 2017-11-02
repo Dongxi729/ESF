@@ -22,9 +22,11 @@ class RigisterAgreeWebView: WKBaseViewController {
         // Do any additional setup after loading the view.
         
         
-        self.urlRequestCache = NSURLRequest.init(url: URL.init(string: self.url)!)
+//        self.urlRequestCache = NSURLRequest.init(url: URL.init(string: self.url)!)
+//
+//        self.webView.load(self.urlRequestCache as URLRequest)
         
-        self.webView.load(self.urlRequestCache as URLRequest)
+        loadFirst(loadURl: self.url, firstUrl: rigisterUrl)
     }
 
 

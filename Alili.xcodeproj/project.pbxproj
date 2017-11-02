@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26044F511E35F09D0017EC39 /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26044F501E35F09D0017EC39 /* Nine.swift */; };
 		26044F531E35F0A90017EC39 /* RightBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26044F521E35F0A90017EC39 /* RightBtn.swift */; };
 		26044F551E35F0C90017EC39 /* NineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26044F541E35F0C90017EC39 /* NineView.swift */; };
 		26044F571E35F18A0017EC39 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26044F561E35F18A0017EC39 /* CategoryModel.swift */; };
-		26044F591E35FC520017EC39 /* NineReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26044F581E35FC520017EC39 /* NineReplaceView.swift */; };
-		26044F5B1E36011D0017EC39 /* NineWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26044F5A1E36011D0017EC39 /* NineWebView.swift */; };
 		26044FAA1E36F34D0017EC39 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 26044F841E36F34D0017EC39 /* MKAnnotationView+WebCache.m */; };
 		26044FAB1E36F34D0017EC39 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 26044F861E36F34D0017EC39 /* NSData+ImageContentType.m */; };
 		26044FAC1E36F34D0017EC39 /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 26044F881E36F34D0017EC39 /* NSImage+WebCache.m */; };
@@ -79,14 +76,11 @@
 		2605684C1E03AA8B0007B33C /* GetGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567D91E03AA8B0007B33C /* GetGoodsCell.swift */; };
 		2605684D1E03AA8B0007B33C /* GetGoodsVieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567DA1E03AA8B0007B33C /* GetGoodsVieController.swift */; };
 		2605684F1E03AA8B0007B33C /* GetGoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567DC1E03AA8B0007B33C /* GetGoodView.swift */; };
-		260568501E03AA8B0007B33C /* AwadedRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567DE1E03AA8B0007B33C /* AwadedRecordVC.swift */; };
-		260568511E03AA8B0007B33C /* AwardReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567DF1E03AA8B0007B33C /* AwardReplaceView.swift */; };
 		260568521E03AA8B0007B33C /* BindPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E11E03AA8B0007B33C /* BindPhoneModel.swift */; };
 		260568531E03AA8B0007B33C /* BindPhoneNumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E21E03AA8B0007B33C /* BindPhoneNumViewController.swift */; };
 		260568541E03AA8B0007B33C /* BindPhoneSecrectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E31E03AA8B0007B33C /* BindPhoneSecrectModel.swift */; };
 		260568551E03AA8B0007B33C /* BindPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E41E03AA8B0007B33C /* BindPhoneView.swift */; };
 		260568561E03AA8B0007B33C /* ChangedRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E61E03AA8B0007B33C /* ChangedRecordVC.swift */; };
-		260568571E03AA8B0007B33C /* ChangedReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E71E03AA8B0007B33C /* ChangedReplaceView.swift */; };
 		260568581E03AA8B0007B33C /* ForgerPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567E91E03AA8B0007B33C /* ForgerPassViewController.swift */; };
 		260568591E03AA8B0007B33C /* ForgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567EA1E03AA8B0007B33C /* ForgetView.swift */; };
 		2605685A1E03AA8B0007B33C /* JiaoYIReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567EC1E03AA8B0007B33C /* JiaoYIReplaceView.swift */; };
@@ -101,8 +95,6 @@
 		260568641E03AA8B0007B33C /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567F81E03AA8B0007B33C /* PersonInfoViewController.swift */; };
 		260568651E03AA8B0007B33C /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567F91E03AA8B0007B33C /* SettingCell.swift */; };
 		260568661E03AA8B0007B33C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567FA1E03AA8B0007B33C /* SettingViewController.swift */; };
-		260568671E03AA8B0007B33C /* SharedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567FC1E03AA8B0007B33C /* SharedVC.swift */; };
-		260568681E03AA8B0007B33C /* ShareReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567FD1E03AA8B0007B33C /* ShareReplaceView.swift */; };
 		2605686A1E03AA8B0007B33C /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260568001E03AA8B0007B33C /* ShareView.swift */; };
 		2605686B1E03AA8B0007B33C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260568011E03AA8B0007B33C /* ShareViewController.swift */; };
 		2605686D1E03AA8B0007B33C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260568051E03AA8B0007B33C /* BaseViewController.swift */; };
@@ -150,6 +142,9 @@
 		261161C91E473AC500E11D03 /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 261161B31E473AC500E11D03 /* POPVector.mm */; };
 		261161CA1E473AC500E11D03 /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 261161B61E473AC500E11D03 /* TransformationMatrix.cpp */; };
 		261161DE1E47554E00E11D03 /* UIControl+ZHW.m in Sources */ = {isa = PBXBuildFile; fileRef = 261161DD1E47554E00E11D03 /* UIControl+ZHW.m */; };
+		2619392C1FAAF01A0065034C /* NetStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619392B1FAAF01A0065034C /* NetStatusModel.swift */; };
+		2619392D1FAAF2BB0065034C /* AFNetworking.h in Sources */ = {isa = PBXBuildFile; fileRef = 262D0BFD1F7797E100AFEA12 /* AFNetworking.h */; };
+		2619392F1FAAFE230065034C /* ZDXAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619392E1FAAFE230065034C /* ZDXAlertController.swift */; };
 		262121D91DEF055500090974 /* PaymenyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262121D81DEF055500090974 /* PaymenyModel.swift */; };
 		262D0C201F779B6F00AFEA12 /* NetCheckTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D0C1F1F779B6E00AFEA12 /* NetCheckTool.swift */; };
 		262D0C211F779EEE00AFEA12 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 262D0BFF1F7797E100AFEA12 /* AFNetworkReachabilityManager.m */; };
@@ -166,12 +161,12 @@
 		2683A2C41E15232E00725842 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2683A2C31E15232E00725842 /* UIDeviceExtension.swift */; };
 		26994BD01E55BF77008B309E /* TestAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26994BCF1E55BF77008B309E /* TestAlert.swift */; };
 		269C2A7F1E54980D006A40E8 /* RepplaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C2A7E1E54980D006A40E8 /* RepplaceVC.swift */; };
+		26A9CA161FAAE66100871662 /* WKV+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9CA151FAAE66100871662 /* WKV+URL.swift */; };
 		26B2585A1F776580008D35E1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B258591F776580008D35E1 /* libresolv.tbd */; };
 		26B8CC881E0676CC005B5959 /* StatusBarCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8CC871E0676CC005B5959 /* StatusBarCheck.swift */; };
 		26BD1BAC1E1128C800351C1F /* RigisterAgreeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD1BAB1E1128C800351C1F /* RigisterAgreeWebView.swift */; };
 		26C189871E08DDFB001D0A21 /* NaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C189861E08DDFB001D0A21 /* NaVC.swift */; };
 		26C5DDFF1E518D6900C67C7C /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5DDFE1E518D6900C67C7C /* CategoryVC.swift */; };
-		26C5DE011E518D7700C67C7C /* CategoryReplaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5DE001E518D7700C67C7C /* CategoryReplaceVC.swift */; };
 		26C691C81E2A034300B4E6BC /* WaitPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C691C71E2A034300B4E6BC /* WaitPayVC.swift */; };
 		26C691CA1E2A034D00B4E6BC /* WaitSendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C691C91E2A034D00B4E6BC /* WaitSendVC.swift */; };
 		26ECE63E1E1FA224008ABD31 /* MYQPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ECE63D1E1FA224008ABD31 /* MYQPlaceholderTextView.m */; };
@@ -234,12 +229,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		26044F501E35F09D0017EC39 /* Nine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 		26044F521E35F0A90017EC39 /* RightBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightBtn.swift; sourceTree = "<group>"; };
 		26044F541E35F0C90017EC39 /* NineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NineView.swift; sourceTree = "<group>"; };
 		26044F561E35F18A0017EC39 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		26044F581E35FC520017EC39 /* NineReplaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NineReplaceView.swift; sourceTree = "<group>"; };
-		26044F5A1E36011D0017EC39 /* NineWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NineWebView.swift; sourceTree = "<group>"; };
 		26044F831E36F34D0017EC39 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		26044F841E36F34D0017EC39 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		26044F851E36F34D0017EC39 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -332,14 +324,11 @@
 		260567D91E03AA8B0007B33C /* GetGoodsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGoodsCell.swift; sourceTree = "<group>"; };
 		260567DA1E03AA8B0007B33C /* GetGoodsVieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGoodsVieController.swift; sourceTree = "<group>"; };
 		260567DC1E03AA8B0007B33C /* GetGoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGoodView.swift; sourceTree = "<group>"; };
-		260567DE1E03AA8B0007B33C /* AwadedRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwadedRecordVC.swift; sourceTree = "<group>"; };
-		260567DF1E03AA8B0007B33C /* AwardReplaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardReplaceView.swift; sourceTree = "<group>"; };
 		260567E11E03AA8B0007B33C /* BindPhoneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneModel.swift; sourceTree = "<group>"; };
 		260567E21E03AA8B0007B33C /* BindPhoneNumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneNumViewController.swift; sourceTree = "<group>"; };
 		260567E31E03AA8B0007B33C /* BindPhoneSecrectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneSecrectModel.swift; sourceTree = "<group>"; };
 		260567E41E03AA8B0007B33C /* BindPhoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindPhoneView.swift; sourceTree = "<group>"; };
 		260567E61E03AA8B0007B33C /* ChangedRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangedRecordVC.swift; sourceTree = "<group>"; };
-		260567E71E03AA8B0007B33C /* ChangedReplaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangedReplaceView.swift; sourceTree = "<group>"; };
 		260567E91E03AA8B0007B33C /* ForgerPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgerPassViewController.swift; sourceTree = "<group>"; };
 		260567EA1E03AA8B0007B33C /* ForgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetView.swift; sourceTree = "<group>"; };
 		260567EC1E03AA8B0007B33C /* JiaoYIReplaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiaoYIReplaceView.swift; sourceTree = "<group>"; };
@@ -354,8 +343,6 @@
 		260567F81E03AA8B0007B33C /* PersonInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
 		260567F91E03AA8B0007B33C /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		260567FA1E03AA8B0007B33C /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		260567FC1E03AA8B0007B33C /* SharedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedVC.swift; sourceTree = "<group>"; };
-		260567FD1E03AA8B0007B33C /* ShareReplaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareReplaceView.swift; sourceTree = "<group>"; };
 		260568001E03AA8B0007B33C /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		260568011E03AA8B0007B33C /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		260568051E03AA8B0007B33C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -382,6 +369,37 @@
 		260568861E03AAA00007B33C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SDK/AppDelegate.swift; sourceTree = "<group>"; };
 		2605688D1E03BDDF0007B33C /* PaySuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySuccessVC.swift; sourceTree = "<group>"; };
 		2605688F1E03BDEE0007B33C /* PayFailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayFailViewController.swift; sourceTree = "<group>"; };
+		260B493E1FAB49530081A886 /* IQTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
+		260B493F1FAB49530081A886 /* IQTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQTextView.h; sourceTree = "<group>"; };
+		260B49411FAB49530081A886 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		260B49421FAB49530081A886 /* IQToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQToolbar.m; sourceTree = "<group>"; };
+		260B49431FAB49530081A886 /* IQPreviousNextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQPreviousNextView.h; sourceTree = "<group>"; };
+		260B49441FAB49530081A886 /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		260B49451FAB49530081A886 /* IQBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQBarButtonItem.m; sourceTree = "<group>"; };
+		260B49461FAB49530081A886 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		260B49471FAB49530081A886 /* IQPreviousNextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQPreviousNextView.m; sourceTree = "<group>"; };
+		260B49481FAB49530081A886 /* IQToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQToolbar.h; sourceTree = "<group>"; };
+		260B49491FAB49530081A886 /* IQBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQBarButtonItem.h; sourceTree = "<group>"; };
+		260B494A1FAB49530081A886 /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		260B494C1FAB49530081A886 /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		260B494D1FAB49530081A886 /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		260B494F1FAB49530081A886 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		260B49501FAB49530081A886 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		260B49511FAB49530081A886 /* IQKeyboardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
+		260B49521FAB49530081A886 /* IQKeyboardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
+		260B49541FAB49530081A886 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		260B49551FAB49530081A886 /* IQUIWindow+Hierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		260B49561FAB49530081A886 /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		260B49571FAB49530081A886 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		260B49581FAB49530081A886 /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
+		260B49591FAB49530081A886 /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		260B495A1FAB49530081A886 /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
+		260B495B1FAB49530081A886 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		260B495C1FAB49530081A886 /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		260B495D1FAB49530081A886 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		260B495E1FAB49530081A886 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		260B495F1FAB49530081A886 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		260B49601FAB49530081A886 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
 		260E21B81E610E8700B5FA28 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		260E21B91E610E8700B5FA28 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		260E21BA1E610E8700B5FA28 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -440,6 +458,8 @@
 		261161B81E473AC500E11D03 /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
 		261161DC1E47554E00E11D03 /* UIControl+ZHW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ZHW.h"; sourceTree = "<group>"; };
 		261161DD1E47554E00E11D03 /* UIControl+ZHW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ZHW.m"; sourceTree = "<group>"; };
+		2619392B1FAAF01A0065034C /* NetStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatusModel.swift; sourceTree = "<group>"; };
+		2619392E1FAAFE230065034C /* ZDXAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDXAlertController.swift; sourceTree = "<group>"; };
 		262121D81DEF055500090974 /* PaymenyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymenyModel.swift; path = ../../PaymenyModel.swift; sourceTree = "<group>"; };
 		262D0BFB1F7797E100AFEA12 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		262D0BFC1F7797E100AFEA12 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -496,12 +516,12 @@
 		2683A2C31E15232E00725842 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		26994BCF1E55BF77008B309E /* TestAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAlert.swift; sourceTree = "<group>"; };
 		269C2A7E1E54980D006A40E8 /* RepplaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepplaceVC.swift; sourceTree = "<group>"; };
+		26A9CA151FAAE66100871662 /* WKV+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKV+URL.swift"; sourceTree = "<group>"; };
 		26B258591F776580008D35E1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		26B8CC871E0676CC005B5959 /* StatusBarCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarCheck.swift; sourceTree = "<group>"; };
 		26BD1BAB1E1128C800351C1F /* RigisterAgreeWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RigisterAgreeWebView.swift; sourceTree = "<group>"; };
 		26C189861E08DDFB001D0A21 /* NaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaVC.swift; sourceTree = "<group>"; };
 		26C5DDFE1E518D6900C67C7C /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
-		26C5DE001E518D7700C67C7C /* CategoryReplaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryReplaceVC.swift; sourceTree = "<group>"; };
 		26C691C71E2A034300B4E6BC /* WaitPayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitPayVC.swift; sourceTree = "<group>"; };
 		26C691C91E2A034D00B4E6BC /* WaitSendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitSendVC.swift; sourceTree = "<group>"; };
 		26ECE63C1E1FA224008ABD31 /* MYQPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYQPlaceholderTextView.h; sourceTree = "<group>"; };
@@ -742,6 +762,7 @@
 		260567591E03A8D60007B33C /* thirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				260B493C1FAB49530081A886 /* IQKeyboardManager */,
 				262D0BF91F7797E100AFEA12 /* AFNetworking */,
 				261161841E473AC500E11D03 /* pop */,
 				26044F821E36F34D0017EC39 /* SDWebImage */,
@@ -915,7 +936,6 @@
 				26F8A9251E28685100656CD2 /* 详细地址(detailVC) */,
 				260567D11E03AA8B0007B33C /* Account(积分) */,
 				260567D71E03AA8B0007B33C /* addressVC(收获地址) */,
-				260567DD1E03AA8B0007B33C /* awaraded(中奖纪录) */,
 				260567E01E03AA8B0007B33C /* bindTelNum(绑定手机号) */,
 				260567E51E03AA8B0007B33C /* changedRecord(兑换纪录) */,
 				260567E81E03AA8B0007B33C /* forgerPass(忘记密码) */,
@@ -925,7 +945,6 @@
 				260567F41E03AA8B0007B33C /* personInfo个人资料 */,
 				260567F91E03AA8B0007B33C /* SettingCell.swift */,
 				260567FA1E03AA8B0007B33C /* SettingViewController.swift */,
-				260567FB1E03AA8B0007B33C /* sharedAwared(分享有礼) */,
 			);
 			path = "setting(设置)";
 			sourceTree = "<group>";
@@ -952,15 +971,6 @@
 			path = "addressVC(收获地址)";
 			sourceTree = "<group>";
 		};
-		260567DD1E03AA8B0007B33C /* awaraded(中奖纪录) */ = {
-			isa = PBXGroup;
-			children = (
-				260567DE1E03AA8B0007B33C /* AwadedRecordVC.swift */,
-				260567DF1E03AA8B0007B33C /* AwardReplaceView.swift */,
-			);
-			path = "awaraded(中奖纪录)";
-			sourceTree = "<group>";
-		};
 		260567E01E03AA8B0007B33C /* bindTelNum(绑定手机号) */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,7 +986,6 @@
 			isa = PBXGroup;
 			children = (
 				260567E61E03AA8B0007B33C /* ChangedRecordVC.swift */,
-				260567E71E03AA8B0007B33C /* ChangedReplaceView.swift */,
 			);
 			path = "changedRecord(兑换纪录)";
 			sourceTree = "<group>";
@@ -1018,15 +1027,6 @@
 				260567F81E03AA8B0007B33C /* PersonInfoViewController.swift */,
 			);
 			path = "personInfo个人资料";
-			sourceTree = "<group>";
-		};
-		260567FB1E03AA8B0007B33C /* sharedAwared(分享有礼) */ = {
-			isa = PBXGroup;
-			children = (
-				260567FC1E03AA8B0007B33C /* SharedVC.swift */,
-				260567FD1E03AA8B0007B33C /* ShareReplaceView.swift */,
-			);
-			path = "sharedAwared(分享有礼)";
 			sourceTree = "<group>";
 		};
 		260567FE1E03AA8B0007B33C /* share(分享页面) */ = {
@@ -1089,8 +1089,9 @@
 				2605681B1E03AA8B0007B33C /* CustomTabBarController.swift */,
 				2605681C1E03AA8B0007B33C /* MainViewController.swift */,
 				2605681D1E03AA8B0007B33C /* TabbarButton.swift */,
-				2605681E1E03AA8B0007B33C /* WKBaseViewController.swift */,
+				26A9CA141FAAE62C00871662 /* WKV */,
 				26C189861E08DDFB001D0A21 /* NaVC.swift */,
+				2619392E1FAAFE230065034C /* ZDXAlertController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1109,6 +1110,84 @@
 				2605688F1E03BDEE0007B33C /* PayFailViewController.swift */,
 			);
 			name = "支付失败";
+			sourceTree = "<group>";
+		};
+		260B493C1FAB49530081A886 /* IQKeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				260B493D1FAB49530081A886 /* IQTextView */,
+				260B49401FAB49530081A886 /* IQToolbar */,
+				260B494B1FAB49530081A886 /* Constants */,
+				260B494E1FAB49530081A886 /* Resources */,
+				260B49501FAB49530081A886 /* IQKeyboardReturnKeyHandler.h */,
+				260B49511FAB49530081A886 /* IQKeyboardManager.h */,
+				260B49521FAB49530081A886 /* IQKeyboardManager.m */,
+				260B49531FAB49530081A886 /* Categories */,
+				260B49601FAB49530081A886 /* IQKeyboardReturnKeyHandler.m */,
+			);
+			path = IQKeyboardManager;
+			sourceTree = "<group>";
+		};
+		260B493D1FAB49530081A886 /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				260B493E1FAB49530081A886 /* IQTextView.m */,
+				260B493F1FAB49530081A886 /* IQTextView.h */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		260B49401FAB49530081A886 /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				260B49411FAB49530081A886 /* IQUIView+IQKeyboardToolbar.h */,
+				260B49421FAB49530081A886 /* IQToolbar.m */,
+				260B49431FAB49530081A886 /* IQPreviousNextView.h */,
+				260B49441FAB49530081A886 /* IQTitleBarButtonItem.m */,
+				260B49451FAB49530081A886 /* IQBarButtonItem.m */,
+				260B49461FAB49530081A886 /* IQUIView+IQKeyboardToolbar.m */,
+				260B49471FAB49530081A886 /* IQPreviousNextView.m */,
+				260B49481FAB49530081A886 /* IQToolbar.h */,
+				260B49491FAB49530081A886 /* IQBarButtonItem.h */,
+				260B494A1FAB49530081A886 /* IQTitleBarButtonItem.h */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		260B494B1FAB49530081A886 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				260B494C1FAB49530081A886 /* IQKeyboardManagerConstantsInternal.h */,
+				260B494D1FAB49530081A886 /* IQKeyboardManagerConstants.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		260B494E1FAB49530081A886 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				260B494F1FAB49530081A886 /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		260B49531FAB49530081A886 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				260B49541FAB49530081A886 /* IQNSArray+Sort.m */,
+				260B49551FAB49530081A886 /* IQUIWindow+Hierarchy.m */,
+				260B49561FAB49530081A886 /* IQUIViewController+Additions.h */,
+				260B49571FAB49530081A886 /* IQUITextFieldView+Additions.m */,
+				260B49581FAB49530081A886 /* IQUIScrollView+Additions.m */,
+				260B49591FAB49530081A886 /* IQUIView+Hierarchy.m */,
+				260B495A1FAB49530081A886 /* IQUIWindow+Hierarchy.h */,
+				260B495B1FAB49530081A886 /* IQNSArray+Sort.h */,
+				260B495C1FAB49530081A886 /* IQUIScrollView+Additions.h */,
+				260B495D1FAB49530081A886 /* IQUITextFieldView+Additions.h */,
+				260B495E1FAB49530081A886 /* IQUIViewController+Additions.m */,
+				260B495F1FAB49530081A886 /* IQUIView+Hierarchy.h */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		261161841E473AC500E11D03 /* pop */ = {
@@ -1248,6 +1327,16 @@
 			path = ZXPUnicode;
 			sourceTree = "<group>";
 		};
+		26A9CA141FAAE62C00871662 /* WKV */ = {
+			isa = PBXGroup;
+			children = (
+				2605681E1E03AA8B0007B33C /* WKBaseViewController.swift */,
+				26A9CA151FAAE66100871662 /* WKV+URL.swift */,
+				2619392B1FAAF01A0065034C /* NetStatusModel.swift */,
+			);
+			name = WKV;
+			sourceTree = "<group>";
+		};
 		26C691C51E2A031200B4E6BC /* 待付款 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1277,11 +1366,7 @@
 		26F19B831E30E47900AF602D /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				26044F501E35F09D0017EC39 /* Nine.swift */,
-				26044F5A1E36011D0017EC39 /* NineWebView.swift */,
-				26044F581E35FC520017EC39 /* NineReplaceView.swift */,
 				26C5DDFE1E518D6900C67C7C /* CategoryVC.swift */,
-				26C5DE001E518D7700C67C7C /* CategoryReplaceVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1609,12 +1694,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2619392D1FAAF2BB0065034C /* AFNetworking.h in Sources */,
+				26A9CA161FAAE66100871662 /* WKV+URL.swift in Sources */,
 				262D0C211F779EEE00AFEA12 /* AFNetworkReachabilityManager.m in Sources */,
 				26044FB11E36F34D0017EC39 /* SDWebImageDownloader.m in Sources */,
 				26633A341E0E0464006D619B /* RefreshView.swift in Sources */,
 				260568711E03AA8B0007B33C /* Common.swift in Sources */,
 				26F7CF0B1E2B8E6A0081387F /* AutoSolVC.swift in Sources */,
-				26044F511E35F09D0017EC39 /* Nine.swift in Sources */,
 				260568791E03AA8B0007B33C /* ImgWithRound.swift in Sources */,
 				266D20501E44750C00FFF012 /* CollectCell.swift in Sources */,
 				26044FAE1E36F34D0017EC39 /* SDImageCacheConfig.m in Sources */,
@@ -1646,11 +1732,9 @@
 				5EB459131E5A9B7700439C48 /* Animated.swift in Sources */,
 				26994BD01E55BF77008B309E /* TestAlert.swift in Sources */,
 				2605682C1E03AA8B0007B33C /* MyVC.swift in Sources */,
-				26C5DE011E518D7700C67C7C /* CategoryReplaceVC.swift in Sources */,
 				2605684F1E03AA8B0007B33C /* GetGoodView.swift in Sources */,
 				26044FAD1E36F34D0017EC39 /* SDImageCache.m in Sources */,
 				26F8A92B1E2872B500656CD2 /* DetailAddModel.swift in Sources */,
-				260568501E03AA8B0007B33C /* AwadedRecordVC.swift in Sources */,
 				261161C41E473AC500E11D03 /* POPGeometry.mm in Sources */,
 				26044FAB1E36F34D0017EC39 /* NSData+ImageContentType.m in Sources */,
 				26F67BB81DED75AC00396D95 /* RSADataSigner.m in Sources */,
@@ -1666,15 +1750,14 @@
 				26F8A98D1E28E79700656CD2 /* MyViewController.swift in Sources */,
 				26F67BB31DED75AC00396D95 /* DataSigner.m in Sources */,
 				26BD1BAC1E1128C800351C1F /* RigisterAgreeWebView.swift in Sources */,
-				260568681E03AA8B0007B33C /* ShareReplaceView.swift in Sources */,
 				260568491E03AA8B0007B33C /* AccountTableViewController.swift in Sources */,
-				26044F5B1E36011D0017EC39 /* NineWebView.swift in Sources */,
 				26F9BA271E34A72D00AB371C /* LeftBtnView.swift in Sources */,
 				2605683A1E03AA8B0007B33C /* UndelLineLabel.swift in Sources */,
 				261161BB1E473AC500E11D03 /* POPAnimationEvent.mm in Sources */,
 				2605687D1E03AA8B0007B33C /* TableBaseViewController.swift in Sources */,
 				260568471E03AA8B0007B33C /* AccountHeaderVIew.swift in Sources */,
 				2683A2C21E15069100725842 /* TFFF.swift in Sources */,
+				2619392C1FAAF01A0065034C /* NetStatusModel.swift in Sources */,
 				2605685A1E03AA8B0007B33C /* JiaoYIReplaceView.swift in Sources */,
 				26044F551E35F0C90017EC39 /* NineView.swift in Sources */,
 				260568801E03AA8B0007B33C /* ToolBar.swift in Sources */,
@@ -1690,7 +1773,6 @@
 				26044FB01E36F34D0017EC39 /* SDWebImageDecoder.m in Sources */,
 				260568401E03AA8B0007B33C /* MyViewCell.swift in Sources */,
 				26044FB41E36F34D0017EC39 /* SDWebImagePrefetcher.m in Sources */,
-				260568571E03AA8B0007B33C /* ChangedReplaceView.swift in Sources */,
 				260568751E03AA8B0007B33C /* CustomTF.swift in Sources */,
 				260568551E03AA8B0007B33C /* BindPhoneView.swift in Sources */,
 				26044FB51E36F34D0017EC39 /* UIButton+WebCache.m in Sources */,
@@ -1709,9 +1791,9 @@
 				26044F531E35F0A90017EC39 /* RightBtn.swift in Sources */,
 				2605688E1E03BDDF0007B33C /* PaySuccessVC.swift in Sources */,
 				26044FCB1E37384A0017EC39 /* UINavigationBar+CustomHeight.m in Sources */,
-				260568511E03AA8B0007B33C /* AwardReplaceView.swift in Sources */,
 				262D0C201F779B6F00AFEA12 /* NetCheckTool.swift in Sources */,
 				2669BECA1E5FDB2D00DCAC79 /* BaseTabbarVC.swift in Sources */,
+				2619392F1FAAFE230065034C /* ZDXAlertController.swift in Sources */,
 				26F67BB91DED75AC00396D95 /* RSADataVerifier.m in Sources */,
 				261161C01E473AC500E11D03 /* POPBasicAnimation.mm in Sources */,
 				260568661E03AA8B0007B33C /* SettingViewController.swift in Sources */,
@@ -1730,7 +1812,6 @@
 				2605685B1E03AA8B0007B33C /* JiaoYIVC.swift in Sources */,
 				260568521E03AA8B0007B33C /* BindPhoneModel.swift in Sources */,
 				260567821E03A8D60007B33C /* Encryption.m in Sources */,
-				260568671E03AA8B0007B33C /* SharedVC.swift in Sources */,
 				26044FB71E36F34D0017EC39 /* UIImage+MultiFormat.m in Sources */,
 				260568731E03AA8B0007B33C /* CountDownBtn.swift in Sources */,
 				2605686B1E03AA8B0007B33C /* ShareViewController.swift in Sources */,
@@ -1763,7 +1844,6 @@
 				261161BE1E473AC500E11D03 /* POPAnimationTracer.mm in Sources */,
 				2605685C1E03AA8B0007B33C /* logoutModel.swift in Sources */,
 				261161C21E473AC500E11D03 /* POPCustomAnimation.mm in Sources */,
-				26044F591E35FC520017EC39 /* NineReplaceView.swift in Sources */,
 				260568391E03AA8B0007B33C /* RigisterViewController.swift in Sources */,
 				260568851E03AA8B0007B33C /* WKBaseViewController.swift in Sources */,
 				260568591E03AA8B0007B33C /* ForgetView.swift in Sources */,

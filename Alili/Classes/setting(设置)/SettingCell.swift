@@ -135,7 +135,7 @@ class SettingCell: UITableViewCell {
         let sysverson = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         
         //拼接label的值
-        versonLabel.text = "Copyright© 2013-2016 锐掌Ie9e.com 版权所有 " + "V" + sysverson!
+        versonLabel.text = "Copyright© 2013-2017 锐掌Ie9e.com 版权所有 " + "V" + sysverson!
         
         addSubview(nameLabel)
         addSubview(imgView)
@@ -183,7 +183,7 @@ extension SettingCell {
                     
                     
                     WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: dateForm as Date, completionHandler: {
-                        self.clearCaheLabel.text = "0.0bytes"
+                        self.clearCaheLabel.text = "0.0MB"
                     })
                     
                     /**

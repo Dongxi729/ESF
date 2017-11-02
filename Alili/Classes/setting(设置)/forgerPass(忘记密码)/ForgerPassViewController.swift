@@ -59,7 +59,12 @@ class ForgerPassViewController: BaseViewController,ForgetViewDelegate {
 
 extension ForgerPassViewController {
     func setView() -> Void {
-        v.frame = CGRect(x: 0, y: 64, width: SW, height: SH - 64)
+        
+        if #available(iOS 11, *) {
+            v.frame = CGRect(x: 0, y: 64, width: SW, height: SH - 64)
+        } else {
+            v.frame = CGRect(x: 0, y: 0, width: SW, height: SH - 0)
+        }
         v.delegate = self
         view.addSubview(v)
     }

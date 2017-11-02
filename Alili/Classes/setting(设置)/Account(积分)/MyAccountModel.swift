@@ -100,7 +100,8 @@ class MyAccountModel: NSObject {
                         
                     } else if resultMsg == "该账号已在异地登录，请重新登录" {
                         CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
-                            logoutModel.shared.logoutWithOutAlert()
+                            let nav = NaVC.init(rootViewController: LoginView())
+                            UIApplication.shared.keyWindow?.rootViewController = nav
                         })
                     } else {
                         CustomAlertView.shared.dissmiss()
@@ -119,8 +120,8 @@ class MyAccountModel: NSObject {
                             
                             //刷新猪控制器
                             CustomAlertView.shared.closeWithAlert(strTitle: loginError, test: {
-                                
-                                logoutModel.shared.logoutWithOutAlert()
+                                let nav = NaVC.init(rootViewController: LoginView())
+                                UIApplication.shared.keyWindow?.rootViewController = nav
                                 
                             })
                         }

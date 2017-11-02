@@ -339,7 +339,10 @@ extension DetailAddressVC {
             let inventoryListVC = allVC![allVC!.count - 2]
             ///NineReplaceView,ShoppingViewController.swift
             
-            if (inventoryListVC.isKind(of: ShoppingReplaceView.self)) || (inventoryListVC.isKind(of: MainPageViewReplaceVIew.self)) || (inventoryListVC.isKind(of: NineWebView.self)) || (inventoryListVC.isKind(of: ShoppingViewController.self)) || (inventoryListVC.isKind(of: RepplaceVC.self)) {
+            if (inventoryListVC.isKind(of: ShoppingViewController.self)) ||
+                (inventoryListVC.isKind(of: MainPageViewController.self)) ||
+                (inventoryListVC.isKind(of: CategoryVC.self)) ||
+                (inventoryListVC.isKind(of: ShoppingViewController.self)) {
                 self.navigationController!.popToViewController(inventoryListVC, animated: true)
             }
             
