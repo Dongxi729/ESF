@@ -79,13 +79,10 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
                 
             })
             
-            
-            
-            
-            
             //设置导航栏背景颜色透明
             UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
             
+            CCog(message: PersonInfoModel.shared.personImg)
             
             //若单例中没有值，则从缓存字典中取值
             if PersonInfoModel.shared.personImg != nil {
@@ -98,7 +95,6 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
                     self.headerView.headImg.image = UIImage.init(data: imgData as Data)
                 } else {
                     DispatchQueue.main.async {
-                        CCog(message: headURL)
                         if headURL?.characters.count == 0 {
                             self.headerView.headImg.image = #imageLiteral(resourceName: "nav_5")
                         } else {

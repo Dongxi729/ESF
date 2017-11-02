@@ -102,15 +102,11 @@ class PersonInfoViewController: BaseViewController {
         //取消返回手势,防止用户不小心返回页面，输入的个人信息丢失
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        if PersonInfoModel.shared.personImg != nil {
-            let headURL = PersonInfoModel.shared.personImg
-            
-            DispatchQueue.main.async {
-                do {
-                    self.headImg.image = try UIImage.init(data: Data.init(contentsOf: URL.init(string: headURL!)!))
-                } catch  {
-                    showWithAlert(alertStr: error.localizedDescription + "\((#file as NSString).lastPathComponent):(\(#line))")
-                }
+        if let headUrl = PersonInfoModel.shared.personImg {
+            if headUrl.characters.count > 0 {
+                DownImgTool.shared.downImgWithURLShowToImg(urlStr: headUrl, imgView: self.headImg)
+            } else {
+                self.headImg.image = #imageLiteral(resourceName: "nav_5")
             }
         }
         
@@ -144,7 +140,6 @@ class PersonInfoViewController: BaseViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
         self.headImg.image = nil
     }
 

@@ -102,7 +102,9 @@ class WXLogin: NSObject {
                     //改变单例的值
                     PersonInfoModel.shared.nickName = list["nickname"] as? String
                     
-                    PersonInfoModel.shared.personImg = list["img"] as? String
+                    if let headUrl = list["img"] as? String {
+                        PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                    }
                     
                     PersonInfoModel.shared.bindPhone = list["password"] as? String
                     
@@ -303,7 +305,9 @@ class WXLogin: NSObject {
                 //改变单例的值
                 PersonInfoModel.shared.nickName = list["nickname"] as? String
                 
-                PersonInfoModel.shared.personImg = list["img"] as? String
+                if let headUrl = list["img"] as? String {
+                    PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                }
                 
                 PersonInfoModel.shared.bindPhone = list["password"] as? String
                 

@@ -176,7 +176,9 @@ class LoginModel: NSObject {
                     //改变单例的值
                     PersonInfoModel.shared.nickName = pData["nickname"] as? String
                     
-                    PersonInfoModel.shared.personImg = pData["img"] as? String
+                    if let headUrl = pData["img"] as? String {
+                        PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                    }
                     
                     PersonInfoModel.shared.jifen = pData["integral"] as? String
                     
@@ -356,7 +358,9 @@ class LoginModel: NSObject {
                     //改变单例的值
                     PersonInfoModel.shared.nickName = pData["nickname"] as? String
                     
-                    PersonInfoModel.shared.personImg = pData["img"] as? String
+                    if let headUrl = pData["img"] as? String {
+                        PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                    }
                     
                     PersonInfoModel.shared.jifen = pData["integral"] as? String
                     

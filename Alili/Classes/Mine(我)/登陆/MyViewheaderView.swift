@@ -268,7 +268,11 @@ extension MyViewheaderView {
             PersonInfoModel.shared.nickName = ppData["nickname"] as? String
             
             //头像地址
-            PersonInfoModel.shared.personImg = ppData["img"] as? String
+            if let headUrl = ppData["img"] as? String {
+                PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+            } else {
+                PersonInfoModel.shared.personImg = ""
+            }
             
             //积分
             PersonInfoModel.shared.jifen = ppData["integral"] as? String
@@ -276,27 +280,26 @@ extension MyViewheaderView {
             //昵称
             nickName.text = PersonInfoModel.shared.nickName
             
-            //积分数量
-//            jifenLabel.text = PersonInfoModel.shared.jifen
-
 
             //异步加载图片
             DispatchQueue.main.async(execute: {
-
-                if PersonInfoModel.shared.personImg == nil {
-                    self.headImg.image = #imageLiteral(resourceName: "nav_5")
-                } else {
-                    DownImgTool.shared.downImgWithURLShowToImg(urlStr: PersonInfoModel.shared.personImg!, imgView: self.headImg)
+                if let imgUrl = PersonInfoModel.shared.personImg {
+                    if imgUrl.characters.count > 0 {
+                        DownImgTool.shared.downImgWithURLShowToImg(urlStr: imgUrl, imgView: self.headImg)
+                    } else {
+                        self.headImg.image = #imageLiteral(resourceName: "nav_5")
+                    }
                 }
             })
-            
         }
         
         //不为空，刷新
-        if PersonInfoModel.shared.personImg != nil {
-            DownImgTool.shared.downImgWithURLShowToImg(urlStr:PersonInfoModel.shared.personImg! , imgView: self.headImg)
-        } else {
-            self.headImg.image = #imageLiteral(resourceName: "nav_5")
+        if let heaUrl = PersonInfoModel.shared.personImg {
+            if heaUrl.characters.count > 0 {
+                DownImgTool.shared.downImgWithURLShowToImg(urlStr:PersonInfoModel.shared.personImg! , imgView: self.headImg)
+            } else {
+                self.headImg.image = #imageLiteral(resourceName: "nav_5")
+            }
         }
         
         
