@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    
+    <script type="text/javascript">
+        function callJsAlert() {
+            alert('Objective-C call js to show alert');
+            
+            window.webkit.messageHandlers.AppModel.postMessage({body: 'call js alert in js'});
+        }
+    
+    
+    function abc() {
+        
+    }
+    </script>
+    
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+            <script language="javascript">
+                
+                var strhref = window.location.href;
+                
+                var strhtml = '{"prepayid":"wx2016121617085819fd474b2b0507101842","noncestr":"6570193e1ba4438580aed22516035311","timestamp":"1481879336","sign":"B3E03FB3062CEEAA920CD015BE356F00"}';
+
+                //JS执行window.webkit.messageHandlers.Share.postMessage(<messageBody>)
+                function shareClick() {
+                    window.webkit.messageHandlers.alipay.postMessage({sign:'biz_content=%7b%22timeout_express%22%3a%2230m%22%2c%22out_trade_no%22%3a%221216152029121112111%22%2c%22subject%22%3a%22%e4%b8%80%e5%85%83%e8%b4%ad%e8%ae%a2%e5%8d%95%22%2c%22total_amount%22%3a%220.01%22%2c%22body%22%3a%22%e4%b8%80%e5%85%83%e8%b4%ad%e8%ae%a2%e5%8d%95%22%7d&method=alipay.trade.app.pay&version=1.0&app_id=2016030601188528&format=json&timestamp=2016-12-16+15%3a20%3a29&sign_type=RSA&charset=utf-8&notify_url=http%3a%2f%2fyungou.ie1e.com%2fapp%2fpaynotify.aspx&sign=SxxAYwM%2brTu6TBWtbM9nMad9q1fVWRbxUcUqkxQ9dXBbhIFNq4B786K9AYIH0Jfd76BJdvHgRXcBN%2fvRVCOsK%2bb9WdzQyGnnWnzgRavhkXQXxjqRnoOPoqhlneQRcMCmAtKEazjsHTdDU6j2DWneKaOJ188PBu2y8zGrU5lpa9Q%3d'});
+                }
+            
+            function payClick() {
+                window.webkit.messageHandlers.wxpay.postMessage(strhtml);
+                
+            }
+            
+            function QQShare() {
+                window.webkit.messageHandlers.qqshare.postMessage(null);
+            }
+            
+            //
+            function callJsAlert(param) {
+                window.webkit.messageHandlers.AppModel.postMessage({body: param});
+            }
+            
+            
+            function logout() {
+                
+                //交易记录
+                window.webkit.messageHandlers.detailRocord.postMessage(null);
+                
+                //返回首页
+                window.webkit.messageHandlers.backToMain.postMessage(null);
+            }
+            
+            function login() {
+                <!--                window.webkit.messageHandlers.login.postMessage('首页');-->
+                <!--                window.webkit.messageHandlers.login.postMessage('ss');-->
+                window.webkit.messageHandlers.login.postMessage(strhref);
+                
+            }
+            
+            //跳转
+            function jump() {
+                //ios
+                window.webkit.messageHandlers.jj.postMessage();
+            }
+            
+                </script>
+            </head>
+    
+    <title>购物车</title>
+
+
+    <body>
+        <h1>这是按钮调用</h1>
+        <input type="button" value="支付宝支付" onclick="shareClick()" />
+        <input type="button" value="微信支付" onclick="payClick()" />
+        
+        <!--        <input type="button" value="QQ分享" onclick="QQShare()" />-->
+        
+<!--        <input type="button" value="跳转" onclick="gotoCart()" />-->
+<!--        <input type="button" value="登陆" onclick="login()" />-->
+<!--        -->
+<!--        -->
+<!--        <div><input type="button" value="call js alert" onclick="callJsAlert()"></div>-->
+<!--        -->
+    </body>
+</html>

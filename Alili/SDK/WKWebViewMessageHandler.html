@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+    <script type="text/javascript">
+        function callJsAlert() {
+            alert('Objective-C call js to show alert');
+            
+            window.webkit.messageHandlers.AppModel.postMessage({body: 'call js alert in js'});
+        }
+    
+    
+    function abc() {
+        
+    }
+    </script>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+            <script language="javascript">
+
+            var strhref = window.location.href;
+
+            //JS执行window.webkit.messageHandlers.Share.postMessage(<messageBody>)
+            function shareClick() {
+                window.webkit.messageHandlers.alipay.postMessage({sign:'biz_content=%7b%22timeout_express%22%3a%2230m%22%2c%22out_trade_no%22%3a%221216105705990334478%22%2c%22subject%22%3a%22%e4%b8%80%e5%85%83%e8%b4%ad%e8%ae%a2%e5%8d%95%22%2c%22total_amount%22%3a%220.01%22%2c%22body%22%3a%22%e4%b8%80%e5%85%83%e8%b4%ad%e8%ae%a2%e5%8d%95%22%7d&method=alipay.trade.app.pay&version=1.0&app_id=2016030601188528&format=json&timestamp=2016-12-16+10%3a57%3a05&sign_type=RSA&charset=utf-8&notify_url=http%3a%2f%2fyungou.ie1e.com%2fapp%2fpaynotify.aspx&sign=h68269gYwc41hdef04RwOSU4tsD7G%2f1JPBJT3ujm5bOq1H8CUvyOy6JjG3ceQerKJAvTUvoNx%2fxdCfy7IQSJjUFNxBPEIHQfW9cZ8xlOoQTZ5qx3VnrkhQO4H4lVyAu8dxy8YeZcOhkLaV9Z5aY%2bg%2bxIE06KHHaHnokWJTtF%2f3I%3d'});
+            }
+            
+            
+            //JS执行window.webkit.messageHandlers.Camera.postMessage(<messageBody>)
+            function payClick() {
+                window.webkit.messageHandlers.jj.postMessage();
+            }
+            
+            function QQShare() {
+                window.webkit.messageHandlers.qqshare.postMessage(null);
+            }
+            
+            //
+            function callJsAlert(param) {
+                window.webkit.messageHandlers.AppModel.postMessage({body: param});
+            }
+            
+            
+            function logout() {
+                window.webkit.messageHandlers.gotoCart.postMessage(null);
+            }
+            
+            function login() {
+<!--                window.webkit.messageHandlers.login.postMessage('首页');-->
+<!--                window.webkit.messageHandlers.login.postMessage('ss');-->
+                window.webkit.messageHandlers.login.postMessage(strhref);
+
+            }
+            
+            //跳转
+            function jump() {
+                //ios
+                window.webkit.messageHandlers.jj.postMessage();
+            }
+            
+            alert(document.cookie);
+            
+          </script>
+    </head>
+    
+    <body>
+        <h1>这是按钮调用</h1>
+        <input type="button" value="支付宝分享" onclick="shareClick()" />
+        <input type="button" value="微信支付" onclick="payClick()" />
+        
+<!--        <input type="button" value="QQ分享" onclick="QQShare()" />-->
+
+        <input type="button" value="跳转" onclick="gotoCart()" />
+        <input type="button" value="登陆" onclick="login()" />
+
+
+        <div><input type="button" value="call js alert" onclick="callJsAlert()"></div>
+
+    </body>
+</html>
