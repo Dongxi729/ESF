@@ -20,6 +20,7 @@ class RigisterAgreeWebView: WKBaseViewController {
 
         // Do any additional setup after loading the view.
         loadFirst(loadURl: self.url, firstUrl: rigisterUrl)
+//        webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: rigisterUrl))!))
     }
 
 

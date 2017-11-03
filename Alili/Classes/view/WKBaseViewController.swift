@@ -319,9 +319,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         }
         
         refreshControl.endRefreshing()
-        
-        ///允许交互
-        self.webView.isUserInteractionEnabled = true
+    
         
         //改变刷新标识符
         self.situationMark = "false"
@@ -442,10 +440,13 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                 switch result {
                 case "用户中途取消":
                     // FIXME: - 支付成功回调错误
-
+//                    let vc = PayFailViewController()
+//                    vc.url = payFailURL
+//                    self.navigationController?.pushViewController(vc, animated: true)
                     let vc = PaySuccessVC()
                     vc.url = paySuccessURL
                     self.navigationController?.pushViewController(vc, animated: true)
+
                     break
                     
                 case "网页支付成功":

@@ -25,7 +25,7 @@ extension WKBaseViewController {
             NetStatusModel.netStatus = sddd.rawValue
             if let nav = self.navigationController?.viewControllers.count {
                 
-                
+
                 
                 if NSStringFromClass(self.classForCoder).contains("ChangedRecordVC") ||
                     NSStringFromClass(self.classForCoder).contains("ServiceViewController") ||
@@ -47,6 +47,7 @@ extension WKBaseViewController {
                     }
                 } else {
                     if nav > 1 {
+
                         if NetStatusModel.netStatus == 0 {
                             self.webView.load(URLRequest.init(url: URL.init(string: loadURl)!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5.0))
                         } else {

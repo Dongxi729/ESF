@@ -16,12 +16,15 @@ class PaySuccessVC: WKBaseViewController {
         
 
         // Do any additional setup after loading the view.
-        
-        
-        loadFirst(loadURl: self.url, firstUrl: payFailURL)
-
+        webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: paySuccessURL))!))
+        let leftBar = UIBarButtonItem.init(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: #selector(popToMain))
+        self.navigationItem.leftBarButtonItem = leftBar
     }
     
+    
+    @objc func popToMain() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
 
     override func didReceiveMemoryWarning() {

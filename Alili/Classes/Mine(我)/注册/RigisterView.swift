@@ -329,7 +329,6 @@ extension RigisterView {
         bgView.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
         
         
-        
         //延时执行第一响应
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             self.tfNum.becomeFirstResponder()
@@ -370,10 +369,10 @@ extension RigisterView {
         addSubview(nickNameLine)
         
         //同意协议
-        addSubview(seleBtnImg)
-        addSubview(seleBtn)
-        addSubview(frontNotiLabel)
-        addSubview(backNotiLabel)
+//        addSubview(seleBtnImg)
+//        addSubview(seleBtn)
+//        addSubview(frontNotiLabel)
+//        addSubview(backNotiLabel)
         
         
         //保存按钮

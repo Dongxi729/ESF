@@ -43,7 +43,9 @@ class ChangedRecordVC: WKBaseViewController {
         
         self.navigationItem.title = "兑换记录"
     
-        loadFirst(loadURl: self.url, firstUrl: changeRocordURL)
+//        loadFirst(loadURl: self.url, firstUrl: changeRocordURL)
+        webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: changeRocordURL))!))
+
 
     }
     
