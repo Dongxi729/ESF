@@ -115,9 +115,9 @@ class LoginModel: NSObject {
                         
                         
 //                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-                            CustomAlertView.shared.alertWithTitle(strTitle: loginSuccess)
+//                            CustomAlertView.shared.alertWithTitle(strTitle: loginSuccess)
 //                        }
-                        
+                        MBManager.showBriefAlert(loginSuccess)
                         
                         guard let dataSource = (dic["data"] as? NSDictionary) else {
                             return

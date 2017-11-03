@@ -245,7 +245,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             self.view.addSubview(self.replaceView)
         }
         
-        self.navigationItem.title = "加载中~~~"
+        self.navigationItem.title = "正在加载中~~~"
         
         if self.webView == nil {
             self.SETUI()

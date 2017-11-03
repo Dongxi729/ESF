@@ -8,15 +8,16 @@
 
 import Foundation
 
+//let comStrURL = "shop.ie1e.com"
 // MARK:- 域名(拼商城)
 //let comStrURL = "yungou.ie1e.com"
 
-let comStrURL = "esf.ie1e.com"
-//#if DEBUG
-//let comStrURL = "shenyouhui.ie1e.com"
-//#else
-//let comStrURL = "www.shenyouhui.com"
-//#endif
+//let comStrURL = "esf.ie1e.com"
+#if DEBUG
+let comStrURL = "shenyouhui.ie1e.com"
+#else
+let comStrURL = "www.shenyouhui.com"
+#endif
 
 
 //微信app id
