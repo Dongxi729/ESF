@@ -25,8 +25,6 @@ extension WKBaseViewController {
             }
         }
         
-        CCog(message: navigationController?.viewControllers.count)
-        
         AFNetworkReachabilityManager.shared().startMonitoring()
         AFNetworkReachabilityManager.shared().setReachabilityStatusChange { (sddd) in
             NetStatusModel.netStatus = sddd.rawValue

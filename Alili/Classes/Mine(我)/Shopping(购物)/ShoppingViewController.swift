@@ -29,7 +29,6 @@ class ShoppingViewController : WKBaseViewController {
             ///状态栏背景色
             self.navigationController?.navigationBar.barTintColor = commonBtnColor
             
-            
             //文字颜色
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
             
@@ -39,10 +38,20 @@ class ShoppingViewController : WKBaseViewController {
         if let nav = navigationController?.viewControllers.count {
             CCog(message: nav)
             if nav == 1 {
-                if NetStatusModel.netStatus == 0 {
-                    self.webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: shooppingCarURL))!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 5.0))
+                var aaa = ""
+                if shooppingCarURL.contains("?") {
+                    aaa = shooppingCarURL + ("&devtype=1&token=") + (token)
                 } else {
-                    self.webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: shooppingCarURL))!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5.0))
+                    aaa = shooppingCarURL + ("?devtype=1&token=") + (token)
+                }
+                CCog(message: aaa)
+                
+                if NetStatusModel.netStatus == 0 {
+                    CCog()
+                    self.webView.load(URLRequest.init(url: URL.init(string: aaa)!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5.0))
+                } else {
+                    CCog()
+                    self.webView.load(URLRequest.init(url: URL.init(string: aaa)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 5.0))
                 }
             }
         }
