@@ -306,7 +306,7 @@ extension SettingViewController {
                     
                     bindPhone = bindPhone.replacingCharacters(in: range, with: "****") as NSString
                     
-                    let alertView = UIAlertController.init(title: "提示", message: "已绑定手机号:\(bindPhone)", preferredStyle: .alert)
+                    let alertView = ZDXAlertController.init(title: "提示", message: "已绑定手机号:\(bindPhone)", preferredStyle: .alert)
                     alertView.addAction(UIAlertAction.init(title: "确定", style: .default, handler: nil))
                     
                     self.present(alertView, animated: true, completion: nil)
@@ -338,7 +338,7 @@ extension SettingViewController {
                     
                     telNum = telNum.replacingCharacters(in: range, with: "****") as NSString
                     
-                    let alertView = UIAlertController.init(title: "提示", message: "已绑定手机号:\(telNum)", preferredStyle: .alert)
+                    let alertView = ZDXAlertController.init(title: "提示", message: "已绑定手机号:\(telNum)", preferredStyle: .alert)
                     alertView.addAction(UIAlertAction.init(title: "确定", style: .default, handler: nil))
                     
                     self.present(alertView, animated: true, completion: nil)
@@ -364,7 +364,7 @@ extension SettingViewController {
                 
                 telNum = telNum.replacingCharacters(in: range, with: "****") as NSString
                 
-                let alertView = UIAlertController.init(title: "提示", message: "已绑定手机号:\(telNum)", preferredStyle: .alert)
+                let alertView = ZDXAlertController.init(title: "提示", message: "已绑定手机号:\(telNum)", preferredStyle: .alert)
                 alertView.addAction(UIAlertAction.init(title: "确定", style: .default, handler: nil))
                 
                 self.present(alertView, animated: true, completion: nil)
@@ -383,7 +383,7 @@ extension SettingViewController {
         case 4:
             
             //1。弹出警告框
-            let alertVC = UIAlertController.init(title: "提示", message: "确定清除吗?", preferredStyle: .alert)
+            let alertVC = ZDXAlertController.init(title: "提示", message: "确定清除吗?", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction.init(title: "确定", style: .destructive, handler: { (_) in
                 SDImageCache.shared().clearDisk(onCompletion: {
                     
@@ -524,7 +524,7 @@ extension SettingViewController {
             
         } else {
             //弹出提示框
-            let sheet = UIAlertController(title: nil, message: "请在设置中打开3d touch", preferredStyle: .alert)
+            let sheet = ZDXAlertController(title: nil, message: "请在设置中打开3d touch", preferredStyle: .alert)
             
             let tempAction = UIAlertAction(title: "确定", style: .cancel) { (action) in
                 

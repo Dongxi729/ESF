@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var tencentOAuth = TencentOAuth()
     
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //创建window
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AFNetworkReachabilityManager.shared().startMonitoring()
         AFNetworkReachabilityManager.shared().setReachabilityStatusChange { (sddd) in
             CCog(message: sddd.rawValue)
+            commonBtnColor
         }
         
         return true

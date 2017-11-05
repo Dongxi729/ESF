@@ -103,7 +103,7 @@ class WXLogin: NSObject {
                     PersonInfoModel.shared.nickName = list["nickname"] as? String
                     
                     if let headUrl = list["img"] as? String {
-                        PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                        PersonInfoModel.shared.personImg = headUrl
                     }
                     
                     PersonInfoModel.shared.bindPhone = list["password"] as? String
@@ -299,7 +299,7 @@ class WXLogin: NSObject {
                 PersonInfoModel.shared.nickName = list["nickname"] as? String
                 
                 if let headUrl = list["img"] as? String {
-                    PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                    PersonInfoModel.shared.personImg = headUrl
                 }
                 
                 PersonInfoModel.shared.bindPhone = list["password"] as? String

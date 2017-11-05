@@ -8,16 +8,17 @@
 
 import Foundation
 
-//let comStrURL = "shop.ie1e.com"
+let comStrURL = "shop.ie1e.com"
 // MARK:- 域名(拼商城)
 //let comStrURL = "yungou.ie1e.com"
 
 //let comStrURL = "esf.ie1e.com"
-#if DEBUG
-let comStrURL = "shenyouhui.ie1e.com"
-#else
-let comStrURL = "www.shenyouhui.com"
-#endif
+
+//#if DEBUG
+//let comStrURL = "shenyouhui.ie1e.com"
+//#else
+//let comStrURL = "www.shenyouhui.com"
+//#endif
 
 
 //微信app id
@@ -326,7 +327,7 @@ let bindPhoneSuc = "bindPhoneSuc"
 let commonBgColor = UIColor.init(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
 
 ///统一按钮颜色
-let commonBtnColor = UIColor.init(red: 241/255, green: 83/255, blue: 83/255, alpha: 1)
+let commonBtnColor = UIColor.init(red: 239/255, green: 106/255, blue: 45/255, alpha: 1)
 
 
 

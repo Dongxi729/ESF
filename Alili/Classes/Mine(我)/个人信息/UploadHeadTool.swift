@@ -22,7 +22,7 @@ class UploadHeadTool: UIView,UIImagePickerControllerDelegate, UINavigationContro
     
     let imagePicker = UIImagePickerController()
     
-    var alertController = UIAlertController()
+    var alertController = ZDXAlertController()
     /**
      ## 图片来源
      */
@@ -36,7 +36,7 @@ class UploadHeadTool: UIView,UIImagePickerControllerDelegate, UINavigationContro
         comfun = _com
         
         //弹出选择图片来源控制器
-        alertController = UIAlertController.init(title: "提示", message: "请选择图片来源", preferredStyle: UIAlertControllerStyle.actionSheet)
+        alertController = ZDXAlertController.init(title: "提示", message: "请选择图片来源", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         //取消事件
         let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (_) in
@@ -55,7 +55,7 @@ class UploadHeadTool: UIView,UIImagePickerControllerDelegate, UINavigationContro
             } else {
 
                 //弹出提示框
-                let sheet = UIAlertController(title: nil, message: "请在设置中打开相册权限", preferredStyle: .alert)
+                let sheet = ZDXAlertController(title: nil, message: "请在设置中打开相册权限", preferredStyle: .alert)
                 
                 let tempAction = UIAlertAction(title: "确定", style: .cancel) { (action) in
 
@@ -91,7 +91,7 @@ class UploadHeadTool: UIView,UIImagePickerControllerDelegate, UINavigationContro
             } else {
                 
                 //弹出提示框
-                let sheet = UIAlertController(title: nil, message: "请在设置中打开摄像头权限", preferredStyle: .alert)
+                let sheet = ZDXAlertController(title: nil, message: "请在设置中打开摄像头权限", preferredStyle: .alert)
                 
                 let tempAction = UIAlertAction(title: "确定", style: .cancel) { (action) in
                     
@@ -315,12 +315,12 @@ extension UploadHeadTool {
 
 
 
-private func presentViewController(alert: UIAlertController, animated flag: Bool, completion: (() -> Void)?,completion1: (() -> Void)?) -> Void {
+private func presentViewController(alert: ZDXAlertController, animated flag: Bool, completion: (() -> Void)?,completion1: (() -> Void)?) -> Void {
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: flag, completion: completion)
     
 }
 func warningAlert(title: String, message: String ){
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+    let alert = ZDXAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:  { (action) -> Void in
     }))
     //   self.present(alert, animated: true, completion: nil)

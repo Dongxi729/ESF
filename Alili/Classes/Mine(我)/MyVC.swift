@@ -128,7 +128,7 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
             //用户token为空。设置未登录视图
             setUnloginView()
             
-            let alertView = UIAlertController.init(title: "提示", message: "请登录", preferredStyle: .alert)
+            let alertView = ZDXAlertController.init(title: "提示", message: "请登录", preferredStyle: .alert)
             alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (nil) in
                 
                 //清除URL保存的值
@@ -177,7 +177,7 @@ class MyVC: BaseViewController,MyViewheaderViewDelegate,MyViewCellDelegate,login
             
             //找不到token,提示用户登陆
         } else {
-            let alertView = UIAlertController.init(title: "提示", message: "请登录", preferredStyle: .alert)
+            let alertView = ZDXAlertController.init(title: "提示", message: "请登录", preferredStyle: .alert)
             alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
             
             alertView.addAction(UIAlertAction.init(title: "确定", style: .default, handler: { (nil) in

@@ -177,7 +177,7 @@ class LoginModel: NSObject {
                     PersonInfoModel.shared.nickName = pData["nickname"] as? String
                     
                     if let headUrl = pData["img"] as? String {
-                        PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                        PersonInfoModel.shared.personImg = headUrl
                     }
                     
                     PersonInfoModel.shared.jifen = pData["integral"] as? String
@@ -358,7 +358,7 @@ class LoginModel: NSObject {
                     PersonInfoModel.shared.nickName = pData["nickname"] as? String
                     
                     if let headUrl = pData["img"] as? String {
-                        PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                        PersonInfoModel.shared.personImg = headUrl
                     }
                     
                     PersonInfoModel.shared.jifen = pData["integral"] as? String

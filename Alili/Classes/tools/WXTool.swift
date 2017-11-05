@@ -114,7 +114,7 @@ class WXTool : UIView,WXApiDelegate,NSURLConnectionDelegate {
         if resp.isKind(of: SendMessageToWXResp.self) {
             switch resp.errCode {
             case 0:
-                let alertController = UIAlertController(title: "提示", message: "分享成功", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = ZDXAlertController(title: "提示", message: "分享成功", preferredStyle: UIAlertControllerStyle.alert)
                 
                 
                 alertController.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.default, handler: nil))
@@ -124,7 +124,7 @@ class WXTool : UIView,WXApiDelegate,NSURLConnectionDelegate {
                 break
             default:
                 
-                let alertController = UIAlertController(title: "提示", message: "用户放弃当前操作", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = ZDXAlertController(title: "提示", message: "用户放弃当前操作", preferredStyle: UIAlertControllerStyle.alert)
                 
                 
                 alertController.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.default, handler: nil))
@@ -212,7 +212,7 @@ class WXTool : UIView,WXApiDelegate,NSURLConnectionDelegate {
     
             }
 //误删----
-            let alertContr = UIAlertController.init(title: strTitle, message: strMsg, preferredStyle: .alert)
+            let alertContr = ZDXAlertController.init(title: strTitle, message: strMsg, preferredStyle: .alert)
             alertContr.addAction(UIAlertAction.init(title: "确认", style: .destructive, handler: nil))
             
             nav?.navigationController?.present(alertContr, animated: true, completion: nil)
@@ -474,7 +474,7 @@ extension WXTool {
     
     //提示未安装微信
     func setupAlertController() {
-        let alert = UIAlertController(title: "温馨提示", message: "请先安装微信客户端", preferredStyle: .alert)
+        let alert = ZDXAlertController(title: "温馨提示", message: "请先安装微信客户端", preferredStyle: .alert)
         let actionConfirm = UIAlertAction(title: "确定", style: .default, handler: nil)
         alert.addAction(actionConfirm)
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)

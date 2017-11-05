@@ -171,7 +171,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
         
         lisetenNetChanged()
         
-        self.imgView.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
+        self.imgView.frame = CGRect.init(x: 0, y: 0, width: SW * 0.35, height: SW * 0.35)
         self.imgView.center = view.center
         self.imgView.image = #imageLiteral(resourceName: "lostNet")
         let tag = UITapGestureRecognizer.init(target: self, action:#selector(WKBaseViewController.imgSEL))
@@ -268,8 +268,6 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                 if webTitle.characters.count == 0 {
                     CCog()
                     self.imgView.isHidden = false
-                } else {
-                    CCog()
                 }
             }
         }
@@ -658,29 +656,25 @@ extension WKBaseViewController {
         switch __data {
         case 100:
             
-            if !netThrough {
+            if NetStatusModel.netStatus == 0 {
                 MBManager.hideAlert()
-                
                 MBManager.showBriefAlert("请检查网络")
             } else {
-                
                 if QQApiInterface.isQQInstalled() == true {
                     MBManager.showBriefAlert("加载分享资源中...")
                     QQTool.shared.qqShare(title: self.titleStr, desc: self.desc, link: self.link, imgUrl: self.imgURL, type: QQApiURLTargetTypeAudio)
                 } else {
                     MBManager.showBriefAlert("未安装QQ或版本不支持")
                 }
-                
             }
             
             
         case 101:
             
-            if !netThrough {
+            if NetStatusModel.netStatus == 0 {
                 
                 MBManager.hideAlert()
                 MBManager.showBriefAlert("请检查网络")
-                
             } else {
                 
                 if QQApiInterface.isQQInstalled() == true {
@@ -691,14 +685,20 @@ extension WKBaseViewController {
                 }
             }
             
+            if !netThrough {
+                
+                
+            } else {
+                
+            }
+            
         case 102:
             
-            if !netThrough {
+            if NetStatusModel.netStatus == 0 {
                 MBManager.hideAlert()
                 MBManager.showBriefAlert("请检查网络")
                 
             } else {
-                
                 if WXApi.isWXAppInstalled() == true {
                     MBManager.showBriefAlert("加载分享资源中...")
                     
@@ -707,15 +707,12 @@ extension WKBaseViewController {
                     MBManager.showBriefAlert("未安装微信或版本不支持")
                 }
             }
-            
-            
         case 103:
-            
-            if !netThrough {
+            if NetStatusModel.netStatus == 0 {
                 MBManager.hideAlert()
                 MBManager.showBriefAlert("请检查网络")
-            } else {
                 
+            } else {
                 if WXApi.isWXAppInstalled() == true {
                     MBManager.showBriefAlert("加载分享资源中...")
                     
@@ -724,7 +721,6 @@ extension WKBaseViewController {
                     MBManager.showBriefAlert("未安装微信或版本不支持")
                 }
             }
-            
         default:
             break
         }

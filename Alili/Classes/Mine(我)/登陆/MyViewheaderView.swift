@@ -269,7 +269,7 @@ extension MyViewheaderView {
             
             //头像地址
             if let headUrl = ppData["img"] as? String {
-                PersonInfoModel.shared.personImg = "http://" + comStrURL + headUrl
+                PersonInfoModel.shared.personImg = headUrl
             } else {
                 PersonInfoModel.shared.personImg = ""
             }

@@ -50,7 +50,6 @@
 		2605682C1E03AA8B0007B33C /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567AE1E03AA8B0007B33C /* MyVC.swift */; };
 		2605682D1E03AA8B0007B33C /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567B01E03AA8B0007B33C /* ServiceViewController.swift */; };
 		2605682E1E03AA8B0007B33C /* ServiceViewReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567B11E03AA8B0007B33C /* ServiceViewReplace.swift */; };
-		260568301E03AA8B0007B33C /* ShoppingReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567B41E03AA8B0007B33C /* ShoppingReplaceView.swift */; };
 		260568321E03AA8B0007B33C /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567B61E03AA8B0007B33C /* ShoppingViewController.swift */; };
 		260568331E03AA8B0007B33C /* UploadHeadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567B81E03AA8B0007B33C /* UploadHeadTool.swift */; };
 		260568341E03AA8B0007B33C /* ForgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260567BA1E03AA8B0007B33C /* ForgetModel.swift */; };
@@ -146,6 +145,9 @@
 		2619392D1FAAF2BB0065034C /* AFNetworking.h in Sources */ = {isa = PBXBuildFile; fileRef = 262D0BFD1F7797E100AFEA12 /* AFNetworking.h */; };
 		2619392F1FAAFE230065034C /* ZDXAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2619392E1FAAFE230065034C /* ZDXAlertController.swift */; };
 		262121D91DEF055500090974 /* PaymenyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262121D81DEF055500090974 /* PaymenyModel.swift */; };
+		262BBA2D1FAEADDA002F9817 /* NineReplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BBA2A1FAEADDA002F9817 /* NineReplaceView.swift */; };
+		262BBA2E1FAEADDA002F9817 /* NineWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BBA2B1FAEADDA002F9817 /* NineWebView.swift */; };
+		262BBA2F1FAEADDA002F9817 /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262BBA2C1FAEADDA002F9817 /* Nine.swift */; };
 		262D0C201F779B6F00AFEA12 /* NetCheckTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D0C1F1F779B6E00AFEA12 /* NetCheckTool.swift */; };
 		262D0C211F779EEE00AFEA12 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 262D0BFF1F7797E100AFEA12 /* AFNetworkReachabilityManager.m */; };
 		2653B04E1E0B68A400E24DE7 /* LoginAfterSygn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2653B04D1E0B68A400E24DE7 /* LoginAfterSygn.swift */; };
@@ -160,7 +162,6 @@
 		2683A2C21E15069100725842 /* TFFF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2683A2C11E15069100725842 /* TFFF.swift */; };
 		2683A2C41E15232E00725842 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2683A2C31E15232E00725842 /* UIDeviceExtension.swift */; };
 		26994BD01E55BF77008B309E /* TestAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26994BCF1E55BF77008B309E /* TestAlert.swift */; };
-		269C2A7F1E54980D006A40E8 /* RepplaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C2A7E1E54980D006A40E8 /* RepplaceVC.swift */; };
 		26A9CA161FAAE66100871662 /* WKV+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9CA151FAAE66100871662 /* WKV+URL.swift */; };
 		26B2585A1F776580008D35E1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B258591F776580008D35E1 /* libresolv.tbd */; };
 		26B8CC881E0676CC005B5959 /* StatusBarCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B8CC871E0676CC005B5959 /* StatusBarCheck.swift */; };
@@ -298,7 +299,6 @@
 		260567AE1E03AA8B0007B33C /* MyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		260567B01E03AA8B0007B33C /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		260567B11E03AA8B0007B33C /* ServiceViewReplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewReplace.swift; sourceTree = "<group>"; };
-		260567B41E03AA8B0007B33C /* ShoppingReplaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingReplaceView.swift; sourceTree = "<group>"; };
 		260567B61E03AA8B0007B33C /* ShoppingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		260567B81E03AA8B0007B33C /* UploadHeadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadHeadTool.swift; sourceTree = "<group>"; };
 		260567BA1E03AA8B0007B33C /* ForgetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetModel.swift; sourceTree = "<group>"; };
@@ -461,6 +461,9 @@
 		2619392B1FAAF01A0065034C /* NetStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatusModel.swift; sourceTree = "<group>"; };
 		2619392E1FAAFE230065034C /* ZDXAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDXAlertController.swift; sourceTree = "<group>"; };
 		262121D81DEF055500090974 /* PaymenyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymenyModel.swift; path = ../../PaymenyModel.swift; sourceTree = "<group>"; };
+		262BBA2A1FAEADDA002F9817 /* NineReplaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineReplaceView.swift; sourceTree = "<group>"; };
+		262BBA2B1FAEADDA002F9817 /* NineWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineWebView.swift; sourceTree = "<group>"; };
+		262BBA2C1FAEADDA002F9817 /* Nine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 		262D0BFB1F7797E100AFEA12 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		262D0BFC1F7797E100AFEA12 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		262D0BFD1F7797E100AFEA12 /* AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -515,7 +518,6 @@
 		2683A2C11E15069100725842 /* TFFF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFFF.swift; sourceTree = "<group>"; };
 		2683A2C31E15232E00725842 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		26994BCF1E55BF77008B309E /* TestAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAlert.swift; sourceTree = "<group>"; };
-		269C2A7E1E54980D006A40E8 /* RepplaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepplaceVC.swift; sourceTree = "<group>"; };
 		26A9CA151FAAE66100871662 /* WKV+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKV+URL.swift"; sourceTree = "<group>"; };
 		26B258591F776580008D35E1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		26B8CC871E0676CC005B5959 /* StatusBarCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarCheck.swift; sourceTree = "<group>"; };
@@ -878,9 +880,7 @@
 			children = (
 				2605688C1E03BDB80007B33C /* 支付失败 */,
 				2605688A1E03BDA30007B33C /* 支付成功 */,
-				260567B41E03AA8B0007B33C /* ShoppingReplaceView.swift */,
 				260567B61E03AA8B0007B33C /* ShoppingViewController.swift */,
-				269C2A7E1E54980D006A40E8 /* RepplaceVC.swift */,
 			);
 			path = "Shopping(购物)";
 			sourceTree = "<group>";
@@ -1366,6 +1366,9 @@
 		26F19B831E30E47900AF602D /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				262BBA2C1FAEADDA002F9817 /* Nine.swift */,
+				262BBA2A1FAEADDA002F9817 /* NineReplaceView.swift */,
+				262BBA2B1FAEADDA002F9817 /* NineWebView.swift */,
 				26C5DDFE1E518D6900C67C7C /* CategoryVC.swift */,
 			);
 			path = controller;
@@ -1715,6 +1718,7 @@
 				261161DE1E47554E00E11D03 /* UIControl+ZHW.m in Sources */,
 				26F8A9271E28688B00656CD2 /* DetailAddressVC.swift in Sources */,
 				260568821E03AA8B0007B33C /* CustomTabBarController.swift in Sources */,
+				262BBA2D1FAEADDA002F9817 /* NineReplaceView.swift in Sources */,
 				261161BD1E473AC500E11D03 /* POPAnimationRuntime.mm in Sources */,
 				260568781E03AA8B0007B33C /* DownImgTool.swift in Sources */,
 				261161C31E473AC500E11D03 /* POPDecayAnimation.mm in Sources */,
@@ -1754,6 +1758,7 @@
 				26F9BA271E34A72D00AB371C /* LeftBtnView.swift in Sources */,
 				2605683A1E03AA8B0007B33C /* UndelLineLabel.swift in Sources */,
 				261161BB1E473AC500E11D03 /* POPAnimationEvent.mm in Sources */,
+				262BBA2E1FAEADDA002F9817 /* NineWebView.swift in Sources */,
 				2605687D1E03AA8B0007B33C /* TableBaseViewController.swift in Sources */,
 				260568471E03AA8B0007B33C /* AccountHeaderVIew.swift in Sources */,
 				2683A2C21E15069100725842 /* TFFF.swift in Sources */,
@@ -1831,7 +1836,7 @@
 				2605682D1E03AA8B0007B33C /* ServiceViewController.swift in Sources */,
 				261161BC1E473AC500E11D03 /* POPAnimationExtras.mm in Sources */,
 				26ECE63E1E1FA224008ABD31 /* MYQPlaceholderTextView.m in Sources */,
-				260568301E03AA8B0007B33C /* ShoppingReplaceView.swift in Sources */,
+				262BBA2F1FAEADDA002F9817 /* Nine.swift in Sources */,
 				265557B21E08120700F25B44 /* PickerV.swift in Sources */,
 				260568331E03AA8B0007B33C /* UploadHeadTool.swift in Sources */,
 				260568561E03AA8B0007B33C /* ChangedRecordVC.swift in Sources */,
@@ -1863,7 +1868,6 @@
 				260568641E03AA8B0007B33C /* PersonInfoViewController.swift in Sources */,
 				2605683C1E03AA8B0007B33C /* LoginDownView.swift in Sources */,
 				2605682A1E03AA8B0007B33C /* MeModel.swift in Sources */,
-				269C2A7F1E54980D006A40E8 /* RepplaceVC.swift in Sources */,
 				26044F571E35F18A0017EC39 /* CategoryModel.swift in Sources */,
 				2605684D1E03AA8B0007B33C /* GetGoodsVieController.swift in Sources */,
 				260568811E03AA8B0007B33C /* WXTool.swift in Sources */,
@@ -2032,7 +2036,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chengyishangwu.shop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ie9e.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2075,7 +2079,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chengyishangwu.shop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ie9e.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

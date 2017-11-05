@@ -36,13 +36,34 @@ class ShoppingViewController : WKBaseViewController {
             UIApplication.shared.statusBarStyle = .lightContent
         }
         
-        
-        loadFirst(loadURl: self.url, firstUrl: shooppingCarURL)
+        if let nav = navigationController?.viewControllers.count {
+            CCog(message: nav)
+            if nav == 1 {
+                if NetStatusModel.netStatus == 0 {
+                    self.webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: shooppingCarURL))!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 5.0))
+                } else {
+                    self.webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: shooppingCarURL))!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5.0))
+                }
+            }
+        }
     }
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        if let nav = navigationController?.viewControllers.count {
+            
+            if nav > 1 {
+                if NetStatusModel.netStatus == 0 {
+                    self.webView.load(URLRequest.init(url: URL.init(string: self.url)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 5.0))
+                } else {
+                    self.webView.load(URLRequest.init(url: URL.init(string: self.url)!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5.0))
+                }
+            }
+        }
+        
+//        loadFirst(loadURl: self.url, firstUrl: shooppingCarURL)
 
     }
 }

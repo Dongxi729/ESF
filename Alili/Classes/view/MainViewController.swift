@@ -42,7 +42,7 @@ extension MainViewController {
         shopVc.navigationBar.isTranslucent = false
         
         ///分类
-        let categoryVC = NaVC.init(rootViewController:CategoryVC())
+        let categoryVC = NaVC.init(rootViewController:Nine())
         categoryVC.navigationBar.isTranslucent = false
         
         if localSave.object(forKey: userToken) != nil {

@@ -18,6 +18,13 @@ extension WKBaseViewController {
     ///   - firstUrl: 加载第一个域名
     func loadFirst(loadURl :String,firstUrl :  String) {
         
+        if let nav = navigationController?.viewControllers.count {
+            CCog(message: nav)
+            if nav == 1 {
+                self.url = firstUrl
+            }
+        }
+        
         CCog(message: navigationController?.viewControllers.count)
         
         AFNetworkReachabilityManager.shared().startMonitoring()
@@ -123,12 +130,14 @@ extension WKBaseViewController {
     }
     
     @objc func commaddURl(adUrl : String) -> String{
+        
         var aaa = ""
         if self.url.contains("?") {
             aaa = adUrl + ("&devtype=1&token=") + (token)
         } else {
             aaa = adUrl + ("?devtype=1&token=") + (token)
         }
+        
         return aaa
     }
     
@@ -210,13 +219,18 @@ extension WKBaseViewController {
 
         // MARK: - 购物车
         if NSStringFromClass(self.classForCoder).contains("ShoppingViewController") {
-            
+        
             CCog(message: self.url)
             if navigationAction.navigationType == WKNavigationType.linkActivated  {
                 if self.url.contains(shooppingCarURL) {
                     
                 } else {
+                    
+                    CCog(message: self.url)
+                    
                     self.url = commaddURl(adUrl: self.url)
+                    
+                    CCog(message: self.url)
                     
                     jumpComm(jumpVC: ShoppingViewController(), str: self.url)
                 }

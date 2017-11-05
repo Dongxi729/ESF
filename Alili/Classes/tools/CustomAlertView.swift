@@ -12,7 +12,7 @@ class CustomAlertView: UIView {
     
     static let shared = CustomAlertView()
     
-    var alertView = UIAlertController()
+    var alertView = ZDXAlertController()
     
     var test:(_ : ()->Void)?
     
@@ -33,7 +33,7 @@ extension CustomAlertView {
     /// - Parameter strTitle: 标题
     func alertWithTitle(strTitle : String) -> Void {
 
-        alertView = UIAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
+        alertView = ZDXAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
 
         //显示提示框
         UIApplication.shared.keyWindow?.rootViewController?.present(alertView, animated: true, completion: nil)
@@ -48,7 +48,7 @@ extension CustomAlertView {
     /// - Parameter strTitle: 标题
     func alertWithIndica(strTitle : String) -> Void {
         
-        alertView = UIAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
+        alertView = ZDXAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
         
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         
@@ -88,7 +88,7 @@ extension CustomAlertView {
     /// - Parameter strTitle: 标题
     func alertWithIndicator(strTitle : String) -> Void {
         
-        alertView = UIAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
+        alertView = ZDXAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
         
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         
@@ -132,7 +132,7 @@ extension CustomAlertView {
     func closeWithAlert(strTitle : String,test:(_ : ()->Void)?)-> Void {
         
         self.test = test
-        alertView = UIAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
+        alertView = ZDXAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
         
         alertView.addAction(UIAlertAction.init(title: "登录", style: .default, handler: { (nil) in
             test!()
@@ -161,7 +161,7 @@ extension CustomAlertView {
     ///
     /// - Parameter strTitle: 标题
     func alertAfterDown(strTitle : String) -> Void {
-        alertView = UIAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
+        alertView = ZDXAlertController.init(title: strTitle, message: nil, preferredStyle: .alert)
         
         //显示提示框
         UIApplication.shared.keyWindow?.rootViewController?.present(alertView, animated: true, completion: nil)
@@ -184,13 +184,13 @@ extension CustomAlertView {
     }
 }
 
-private func presentViewController(alert: UIAlertController, animated flag: Bool, completion: (() -> Void)?) -> Void {
+private func presentViewController(alert: ZDXAlertController, animated flag: Bool, completion: (() -> Void)?) -> Void {
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: flag, completion: completion)
     
 }
 
 func warningAlert2(title: String, message: String ){
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+    let alert = ZDXAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:  { (action) -> Void in
     }))
     

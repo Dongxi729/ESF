@@ -255,7 +255,7 @@ extension PickerV {
         self.getData!(province,city,area)
         
         //消息显示
-        let alertController = UIAlertController(title: "您选择了",
+        let alertController = ZDXAlertController(title: "您选择了",
                                                 message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "确定", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)

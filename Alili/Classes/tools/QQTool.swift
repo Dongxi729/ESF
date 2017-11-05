@@ -143,7 +143,7 @@ class QQTool: NSObject,QQApiInterfaceDelegate,TencentSessionDelegate {
     
     
     func showAlert(title:String, message:String){
-        let alertController = UIAlertController(title: title,
+        let alertController = ZDXAlertController(title: title,
                                                 message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "确定", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)

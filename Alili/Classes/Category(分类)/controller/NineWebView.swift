@@ -1,8 +1,8 @@
 //
-//  RepplaceVC.swift
+//  NineWebView.swift
 //  Alili
 //
-//  Created by 郑东喜 on 2017/2/15.
+//  Created by 郑东喜 on 2017/1/23.
 //  Copyright © 2017年 郑东喜. All rights reserved.
 //
 
@@ -10,8 +10,9 @@ import UIKit
 
 import WebKit
 
-class RepplaceVC: WKBaseViewController {
-    
+
+class NineWebView: WKBaseViewController {
+    //设置导航栏样式
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -35,69 +36,68 @@ class RepplaceVC: WKBaseViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+//        loadFirst(loadURl: self.url, firstUrl: category_URL)
         
-        //加载URL
-        let urlStr = shoppingCarArray.lastObject
-        
-        let url = URL.init(string: urlStr as! String)
-        
-        DispatchQueue.main.async {
-            
-            self.urlRequestCache = NSURLRequest.init(url: url!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 0)
-            self.webView.load(self.urlRequestCache as URLRequest)   
+        if self.url.contains(comStrURL) {
+
+            let url = URL.init(string: self.url)
+
+            DispatchQueue.main.async {
+                self.urlRequestCache = NSURLRequest.init(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+                self.webView.load(self.urlRequestCache as URLRequest)
+            }
+
         }
     }
-    
+
     override func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
+
         url = (navigationAction.request.url?.absoluteString)!
-        
-        XFLog(message: url)
-        
+
+
         if navigationAction.navigationType == WKNavigationType.linkActivated {
-            
-            
+
             if self.url.contains("?") {
                 self.url = self.url + ("&devtype=1&token=") + (token)
             } else {
                 self.url = self.url + ("?devtype=1&token=") + (token)
             }
-            
+
             //判断是否包含相同的url
-            if shoppingCarArray.count > 0 && (shoppingCarArray.lastObject as! String) == self.url {
-                
+            if separateArrey.count > 0 && (separateArrey.lastObject as! String) == self.url {
+                MBManager.hideAlert()
                 self.webView.reload()
                 decisionHandler(.allow)
-                
-                shoppingCarArray.removeLastObject()
+
+                separateArrey.removeLastObject()
                 return
             }
-            
-            shoppingCarArray.add(url)
-            
-            aaa(str: self.url)
-            
-            
+
+            separateArrey.add(self.url)
+
+            aaa(str: separateArrey.lastObject as! String)
+
+            //XFLog(message: url)
+
             decisionHandler(.cancel)
-            
+
         } else {
-            
             decisionHandler(.allow)
+
         }
-        
+
     }
-    
+
+    //url---
     func aaa(str : String) -> Void {
-        
-        let vvv = ShoppingViewController()
+
+        let vvv = NineReplaceView()
         vvv.url = str
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vvv, animated: true)
-        
     }
-    
 }
