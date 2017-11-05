@@ -438,13 +438,10 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                 switch result {
                 case "用户中途取消":
                     // FIXME: - 支付成功回调错误
-//                    let vc = PayFailViewController()
-//                    vc.url = payFailURL
-//                    self.navigationController?.pushViewController(vc, animated: true)
-                    let vc = PaySuccessVC()
-                    vc.url = paySuccessURL
+                    let vc = PayFailViewController()
+                    vc.url = payFailURL
                     self.navigationController?.pushViewController(vc, animated: true)
-
+                    
                     break
                     
                 case "网页支付成功":

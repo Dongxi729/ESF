@@ -104,34 +104,11 @@ class SettingCell: UITableViewCell {
         ///清除缓存
         
         
-        DispatchQueue.global(qos: .default).async {
-            
-            let cacheSize : UInt = SDImageCache.shared().getSize()
-            //2.获取ios 本地文件library缓存大小
-            var paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as NSString
-            paths = paths.replacingOccurrences(of: "file:///", with: "/") as NSString
-            
-            self.cacheSaveStr = paths as String
-            
-            //1.本地文件大小统计
-            let localFileSize = paths.fileSize()
-            
-            let localCacheNum = Float(localFileSize) / 1024 / 1024
-            
-            cacheLable.text = NSString.localizedStringWithFormat("%.2fMB", localCacheNum) as String
-            self.xxx  = NSString.localizedStringWithFormat("%.2fMB", localCacheNum) as String
-            
-//            cacheLable.sizeToFit()
-        }
-        
+
         return cacheLable
     }()
     
-    var xxx : String = "" {
-        didSet {
-          CCog()
-        }
-    }
+
     
     
     //重写构造方法
@@ -166,6 +143,25 @@ class SettingCell: UITableViewCell {
         
         //去除高亮效果
         self.selectionStyle = .none
+        
+        DispatchQueue.global(qos: .default).async {
+            
+            let cacheSize : UInt = SDImageCache.shared().getSize()
+            //2.获取ios 本地文件library缓存大小
+            var paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as NSString
+            paths = paths.replacingOccurrences(of: "file:///", with: "/") as NSString
+            
+            self.cacheSaveStr = paths as String
+            
+            //1.本地文件大小统计
+            let localFileSize = paths.fileSize()
+            
+            let localCacheNum = Float(localFileSize + UInt64(cacheSize)) / 1024 / 1024
+            DispatchQueue.main.async {
+                self.clearCaheLabel.text = NSString.localizedStringWithFormat("%.2fMB", localCacheNum) as String
+            }
+        }
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -203,7 +199,6 @@ extension SettingCell {
                     
                     WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: dateForm as Date, completionHandler: {
                         self.clearCaheLabel.text = "0.0MB"
-//                        self.indicator.stopAnimating()
                         
                     })
                     
@@ -250,12 +245,7 @@ extension SettingCell {
                     URLCache.shared.removeAllCachedResponses()
                 }
             }
-
         }
-
-        //重新调整label大小
-        self.clearCaheLabel.sizeToFit()
-        
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "clearDone"), object: nil)
         
     }

@@ -65,6 +65,10 @@ extension ForgerPassViewController {
         } else {
             v.frame = CGRect(x: 0, y: 0, width: SW, height: SH - 0)
         }
+        
+        if SH == 812 {
+            v.frame = CGRect(x: 0, y: 0, width: SW, height: SH - 0)
+        }
         v.delegate = self
         view.addSubview(v)
     }
