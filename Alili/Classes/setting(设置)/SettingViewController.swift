@@ -40,6 +40,11 @@ class SettingViewController: TableBaseViewController,SettingCellDelegate,UIViewC
         return data
     }()
     
+    var setIndexPath : IndexPath?
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)    }
+    
     //导航栏设置还原
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,20 +56,6 @@ class SettingViewController: TableBaseViewController,SettingCellDelegate,UIViewC
         
         //禁用返回手势
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        
-        ///检查3d touch是否可用
-        if #available(iOS 9.0, *) {
-            if self.traitCollection.forceTouchCapability == .available {
-                //XFLog(message: "3d touch usable")
-                
-                self.istouchAvaliable = true
-            } else {
-                self.istouchAvaliable = false
-                //XFLog(message: "3d touch unsable")
-            }
-        } else {
-            // Fallback on earlier versions
-        }
         
         //先从单例中匹配，若不匹配从本地缓存的资料查找
         if BindPhoneModel.shared.bindPhone == "true" {
@@ -160,6 +151,8 @@ extension SettingViewController {
             //监听代理
             cell?.delegate = self
             
+            self.setIndexPath = indexPath
+
             ///注册预览视图代理
             if #available(iOS 9.0, *) {
                 ///根据是否可用进行注册
@@ -182,6 +175,7 @@ extension SettingViewController {
             cell?.btn.isHidden = true
             cell?.nameLabel.text = dataArr[indexPath.row] as? String
             cell?.versonLabel.isHidden = true
+            
         //            //第二组时，不显示
         case 2:
             cell?.versonLabel.isHidden = false
@@ -203,8 +197,11 @@ extension SettingViewController {
         if indexPath.section == 0 && indexPath.row == 4 {
             cell?.clearCaheLabel.isHidden = false
             cell?.disclosureImg.isHidden = true
+            cell?.indicator.isHidden = false
+            cell?.indicator.startAnimating()
         } else {
             cell?.clearCaheLabel.isHidden = true
+            cell?.indicator.isHidden = true
         }
         
         return (cell)!

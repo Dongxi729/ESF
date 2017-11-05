@@ -34,6 +34,12 @@ class SettingCell: UITableViewCell {
         return lab
     }()
     
+    lazy var indicator: UIActivityIndicatorView = {
+        let d : UIActivityIndicatorView  = UIActivityIndicatorView.init(frame: self.clearCaheLabel.frame)
+        d.activityIndicatorViewStyle = .gray
+        return d
+    }()
+    
     //前置图片
     lazy var imgView: UIImageView = {
         let img = UIImageView()
@@ -90,13 +96,16 @@ class SettingCell: UITableViewCell {
     
     ///清除缓存文本
     lazy var clearCaheLabel : UILabel = {
-        let cacheLable : UILabel = UILabel.init(frame: CGRect.init(x: SW - 50 - 2 * 10, y: 10 * 1.25, width: 50, height: 20))
+        let cacheLable : UILabel = UILabel.init(frame: CGRect.init(x: 12, y: 10 * 1.25, width: SW - 2 * 12, height: 20))
         
         cacheLable.font = UIFont.systemFont(ofSize: 14)
-        
+        cacheLable.text = "正在计算中..."
+        cacheLable.textAlignment = .right
         ///清除缓存
         
-        DispatchQueue.main.async {
+        
+        DispatchQueue.global(qos: .default).async {
+            
             let cacheSize : UInt = SDImageCache.shared().getSize()
             //2.获取ios 本地文件library缓存大小
             var paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as NSString
@@ -110,13 +119,20 @@ class SettingCell: UITableViewCell {
             let localCacheNum = Float(localFileSize) / 1024 / 1024
             
             cacheLable.text = NSString.localizedStringWithFormat("%.2fMB", localCacheNum) as String
-
-            cacheLable.sizeToFit()
+            self.xxx  = NSString.localizedStringWithFormat("%.2fMB", localCacheNum) as String
+            
+//            cacheLable.sizeToFit()
         }
-
         
         return cacheLable
     }()
+    
+    var xxx : String = "" {
+        didSet {
+          CCog()
+        }
+    }
+    
     
     //重写构造方法
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -142,6 +158,7 @@ class SettingCell: UITableViewCell {
         addSubview(line)
         addSubview(btn)
         addSubview(disclosureImg)
+
         addSubview(clearCaheLabel)
         
         //系统版本
@@ -173,6 +190,8 @@ extension SettingCell {
         let result = dic?["value"] as? String
         if result == "yes" {
             
+            
+            
             DispatchQueue.main.async {
                 
                 //缓存机制:http://www.jianshu.com/p/186a3b236bc9
@@ -184,6 +203,8 @@ extension SettingCell {
                     
                     WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: dateForm as Date, completionHandler: {
                         self.clearCaheLabel.text = "0.0MB"
+//                        self.indicator.stopAnimating()
+                        
                     })
                     
                     /**

@@ -951,7 +951,7 @@ extension WKBaseViewController {
         view.addSubview(self.progressView)
         
         //默认进度条
-        self.progressView.progressTintColor = UIColor.orange
+        self.progressView.progressTintColor = commonBtnColor
         
         
         //添加刷新控件8

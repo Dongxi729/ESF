@@ -95,7 +95,7 @@ class Nine: UIViewController,LeftBtnViewDelegate,NineViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = commonBgColor
-        
+        tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         view.addSubview(tableView)
     }

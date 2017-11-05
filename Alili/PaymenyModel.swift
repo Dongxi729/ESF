@@ -22,7 +22,7 @@ class PaymenyModel: NSObject,UIApplicationDelegate {
         
         self.comfun = comfun
         
-        let appScheme = "zdx729"
+        let appScheme = "comie9eshop"
         
         /**
          *  支付接口
