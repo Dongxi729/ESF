@@ -342,6 +342,7 @@ extension DetailAddressVC {
             if (inventoryListVC.isKind(of: ShoppingViewController.self)) ||
                 (inventoryListVC.isKind(of: MainPageViewController.self)) ||
                 (inventoryListVC.isKind(of: CategoryVC.self)) ||
+                (inventoryListVC.isKind(of: YHJMainVC.self)) ||
                 (inventoryListVC.isKind(of: ShoppingViewController.self)) {
                 self.navigationController!.popToViewController(inventoryListVC, animated: true)
             }

@@ -31,7 +31,7 @@ class LoginUpView: UIView,UITextFieldDelegate {
         super.init(frame: frame)
         
         //底部label
-        self.bottomLabel()
+//        self.bottomLabel()
         
         //中间视图
         self.cView()

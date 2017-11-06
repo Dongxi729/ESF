@@ -119,6 +119,12 @@ extension WKBaseViewController {
         if NSStringFromClass(self.classForCoder).contains("JiaoYIVC") {}
         if NSStringFromClass(self.classForCoder).contains("JiaoYIReplaceView") {}
         
+        if NSStringFromClass(self.classForCoder).contains("YHJMainVC") {
+            let vc = YHJMainVC()
+            vc.url = str
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         if NSStringFromClass(self.classForCoder).contains("RigisterAgreeWebView") {
             let vc = RigisterAgreeWebView()
             vc.url = str
@@ -335,6 +341,29 @@ extension WKBaseViewController {
         // MARK: - 交易明细 JiaoYIReplaceView  JiaoYIVC
         if NSStringFromClass(self.classForCoder).contains("JiaoYIVC") {}
         if NSStringFromClass(self.classForCoder).contains("JiaoYIReplaceView") {}
+        
+        // MARK: - 优惠券
+        if NSStringFromClass(self.classForCoder).contains("YHJMainVC") {
+            if navigationAction.navigationType == WKNavigationType.linkActivated {
+                
+                CCog(message: self.url)
+                self.url = commaddURl(adUrl: self.url)
+                
+                if self.url.contains("coupon.aspx?state=0") || self.url.contains("coupon.aspx?state=1") || self.url.contains(coupon_URl) {
+                    webView.load(URLRequest.init(url: URL.init(string: self.url)!))
+  
+                } else {
+                    
+                    jumpComm(jumpVC: YHJMainVC(), str: self.url)
+                }
+                decisionHandler(.cancel)
+                
+            } else {
+                CCog(message: self.url)
+                commJump(yy: YHJMainVC())
+                decisionHandler(.allow)
+            }
+        }
         
         if NSStringFromClass(self.classForCoder).contains("RigisterAgreeWebView") {
             if navigationAction.navigationType == WKNavigationType.linkActivated {

@@ -21,10 +21,63 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate,UINavigat
         super.viewWillAppear(animated)
     }
     
+    var rightFooBarButtonItem : UIBarButtonItem?
+    
+    func checlLogin() {
+        
+        let alertView = UIAlertController.init(title: "提示", message: "请登录", preferredStyle: .alert)
+        alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (nil) in
+            
+            //清除URL保存的值
+            mainIndexArray.removeAllObjects()
+            fwqArray.removeAllObjects()
+            commuArray.removeAllObjects()
+            shoppingCarArray.removeAllObjects()
+            jiaoYIArray.removeAllObjects()
+            zhongjiangArray.removeAllObjects()
+            duihuanArray.removeAllObjects()
+            fenxiangArray.removeAllObjects()
+            separateArrey.removeAllObjects()
+            //切换至首页并添加动画
+            let tabbarVC = UIApplication.shared.keyWindow?.rootViewController as! UITabBarController
+            
+            tabbarVC.selectedIndex = 0
+            
+            //转场动画
+            Animated.vcWithTransiton(vc: tabbarVC, animatedType: "kCATransitionFade", timeduration: 1.0)
+            
+        }))
+        
+        alertView.addAction(UIAlertAction.init(title: "确定", style: .default, handler: { (nil) in
+            
+            //设置状态栏颜色
+            self.navigationController?.navigationBar.barTintColor = UIColor.white
+            
+            //文字颜色
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+            
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(LoginView(), animated: true)
+            
+            self.navigationController?.navigationBar.barTintColor = UIColor.white
+            
+            //文字颜色
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+            
+            
+            UIApplication.shared.statusBarStyle = .default
+            self.hidesBottomBarWhenPushed = false
+            
+        }))
+        
+        //            self.present(alertView, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertView, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.white
         
@@ -37,7 +90,7 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate,UINavigat
         btnn.setBackgroundImage(UIImage.init(named: "back"), for: .highlighted)
         
         
-        let rightFooBarButtonItem : UIBarButtonItem = UIBarButtonItem.init(customView: btnn)
+        self.rightFooBarButtonItem = UIBarButtonItem.init(customView: btnn)
         
         if self.navigationController == nil {
             self.navigationItem.setLeftBarButton(rightFooBarButtonItem, animated: true)
@@ -47,7 +100,7 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate,UINavigat
         //当子页面数大于1 时，显示左上角的箭头图标
         if (self.navigationController?.viewControllers.count)! > 1 {
             self.navigationItem.setLeftBarButton(rightFooBarButtonItem, animated: true)
-        } 
+        }
         
         //启用滑动返回（swipe back）
         self.navigationController?.interactivePopGestureRecognizer!.delegate = self

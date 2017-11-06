@@ -73,6 +73,13 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
     /// 网络状态
     var netThrough = false
     
+    // MARK: - 优惠券
+    let userDefault = UserDefaults.standard
+    var isLoadYHJ = false
+    var loll = false
+    var getCards : GetCardV!
+
+    
     /// 断网图片单机刷新事件
     @objc func imgSEL() -> Void {
         
@@ -126,6 +133,7 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                         
                         self.AutoCellularbtn.image = UIImage.init(named: "sulution")
                         self.AutoCellularbtn.isUserInteractionEnabled = true
+                        self.imgView.isHidden = true
                         
                         let soluGes = UITapGestureRecognizer.init(target: self, action: #selector(WKBaseViewController.gotoSet))
                         
@@ -335,6 +343,15 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             })
         }
         
+        /// 显示优惠券
+        if NSStringFromClass(self.classForCoder).contains("MainPageViewController") {
+            if let nav = navigationController?.viewControllers.count {
+                if nav == 1 {
+                    CCog()
+                    loadYHJ()
+                }
+            }
+        }
     }
     
     
@@ -457,7 +474,6 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
                     
                 case "网络连接出错":
                     CustomAlertView.shared.alertWithTitle(strTitle: "网络连接出错")
-                    //                    self.navigationController?.pushViewController(PaySuccessVC(), animated: true)
                     break
                     
                 case "订单支付失败":
@@ -533,8 +549,41 @@ class WKBaseViewController: BaseViewController,WKNavigationDelegate,WKUIDelegate
             if let callStr = message.body as? String {
                 self.call(callNum: callStr)
             }
+        } else if msg == "payBack" {
+            CCog(message: message.body)
+            
+            if let keyStr = message.body as? Int {
+                keyPath = keyStr
+                if keyStr == 1 {
+                    
+                    ExcuteWebModel.mark = keyStr
+                    let btnn = UIButton()
+                    btnn.frame = CGRect(x: 15, y: 64, width: 20, height: 20)
+                    
+                    btnn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+                    btnn.addTarget(self, action: #selector(orderObj), for: .touchUpInside)
+                    self.rightFooBarButtonItem = UIBarButtonItem.init(customView: btnn)
+                    self.navigationItem.setLeftBarButton(rightFooBarButtonItem, animated: true)
+                }
+            }
         }
     }
+    
+    
+    private var keyPath : Int = 0
+    
+    @objc private func orderObj() {
+        CCog(message: "===")
+        self.webView.evaluateJavaScript("orderObj.mainPage() ", completionHandler: nil)
+        let btnn = UIButton()
+        btnn.frame = CGRect(x: 15, y: 64, width: 20, height: 20)
+        
+        btnn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        self.rightFooBarButtonItem = UIBarButtonItem.init(customView: btnn)
+        self.navigationItem.setLeftBarButton(rightFooBarButtonItem, animated: true)
+        btnn.addTarget(self, action:#selector(BaseViewController.fooButtonTapped), for: .touchUpInside)
+    }
+    
     
     @objc func call(callNum :String) {
         let alettVC = ZDXAlertController.init(title: "", message:"是否拨打此电话 \(callNum)", preferredStyle: .alert)
@@ -811,12 +860,8 @@ extension WKBaseViewController {
 // MARK:- 解决蜂窝网受限
 extension WKBaseViewController {
     @objc func gotoSet() -> Void {
-        self.navigationController?.navigationBar.isHidden = false
-        
-        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.pushViewController(AutoSolVC(), animated: true)
-        self.hidesBottomBarWhenPushed = false
-        
     }
     
 }
@@ -883,6 +928,10 @@ extension WKBaseViewController {
         
         /// 打电话
         userContentController.add(self as WKScriptMessageHandler, name: "call")
+        
+        
+        ///  优惠券 payBack
+        userContentController.add(self as WKScriptMessageHandler, name: "payBack")
         
         configuration.userContentController = userContentController
         
@@ -980,4 +1029,9 @@ class LeakAvoider : NSObject, WKScriptMessageHandler {
             userContentController, didReceive: message)
     }
     
+}
+
+
+class ExcuteWebModel : NSObject {
+    static var mark : Int?
 }

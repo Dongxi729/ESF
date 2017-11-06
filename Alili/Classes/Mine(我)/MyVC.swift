@@ -263,7 +263,6 @@ extension MyVC {
     /// 收货地址
     func cellTwo() {
         self.navigationController?.pushViewController(DetailAddressVC(), animated: true)
-        
     }
     
     /// 帮助中心
@@ -272,12 +271,16 @@ extension MyVC {
     }
     
     /// 设置
-    func cellFour() {
-        
+    func cellFive() {
         let setVC = SettingViewController()
         self.navigationController?.pushViewController(setVC, animated: true)
     }
     
+    /// 我的优惠券
+    func cellFour() {
+        let setVC = YHJMainVC()
+        self.navigationController?.pushViewController(setVC, animated: true)
+    }
 }
 
 // MARK:- 接收代理方法

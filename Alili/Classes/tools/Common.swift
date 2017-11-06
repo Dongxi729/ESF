@@ -8,17 +8,17 @@
 
 import Foundation
 
-let comStrURL = "shop.ie1e.com"
+//let comStrURL = "shop.ie1e.com"
 // MARK:- 域名(拼商城)
 //let comStrURL = "yungou.ie1e.com"
 
 //let comStrURL = "esf.ie1e.com"
 
-//#if DEBUG
-//let comStrURL = "shenyouhui.ie1e.com"
-//#else
-//let comStrURL = "www.shenyouhui.com"
-//#endif
+#if DEBUG
+let comStrURL = "shenyouhui.ie1e.com"
+#else
+let comStrURL = "www.shenyouhui.com"
+#endif
 
 
 //微信app id
@@ -38,10 +38,10 @@ let UMENG_APPKEY = "587848c5e88bad40f7002702"
 //微信应用app iD
 //wxb4ba3c02aa476ea1
 //let WXPatient_App_ID = "wxb4ba3c02aa476ea1"
-let WXPatient_App_ID = "wx72ef50bd213b7232"
-let WXPatient_App_Secret = "fca39841591b0823da05b59bfb77f0a1"
+let WXPatient_App_ID = "wxbb835aba39b142b7"
+let WXPatient_App_Secret = "f07156c5852fe897408b188e16d98ab8"
 ///商户ID
-let wxPartnerId = "1435473602"
+let wxPartnerId = "1487200822"
 
 
 
@@ -161,6 +161,16 @@ let category_URL = "http://\(comStrURL)/app/catalogue.aspx"
 
 /// 首页链接
 let firPage_URL = "http://\(comStrURL)/app/index.aspx"
+
+/// 优惠券地址链接
+let coupon_URl = "http://\(comStrURL)/app/coupon.aspx"
+
+/// 兑换优惠券链接
+let couponReceive_URl = "http://\(comStrURL)/app/coupon_receive.aspx"
+
+/// 优惠券请求接口地址
+let couponURL = "\(urlPrefix)\("coupon.ashx")"
+
 
 // MARK:- 提示语
 //提示语
@@ -327,7 +337,7 @@ let bindPhoneSuc = "bindPhoneSuc"
 let commonBgColor = UIColor.init(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
 
 ///统一按钮颜色
-let commonBtnColor = UIColor.init(red: 239/255, green: 106/255, blue: 45/255, alpha: 1)
+let commonBtnColor = UIColor.init(red: 241/255, green: 83/255, blue: 83/255, alpha: 1)
 
 
 

@@ -14,7 +14,7 @@ protocol MyViewCellDelegate {
     func cellTwo()
     func cellThree()
     func cellFour()
-//    func cellFive()
+    func cellFive()
 }
 
 class MyViewCell: UIView {
@@ -40,9 +40,9 @@ class MyViewCell: UIView {
 extension MyViewCell {
     fileprivate func setUI() -> Void {
 
-        let ladDataSource = ["订单管理","收货地址","帮助中心","设置"]
+        let ladDataSource = ["订单管理","收货地址","帮助中心","我的优惠券","设置"]
         
-        let qzImgName = ["buyDetail","address","help","mine-setting-iconN"]
+        let qzImgName = ["buyDetail","address","help","gift_card","mine-setting-iconN"]
         
         var line = UIView()
         
@@ -144,10 +144,10 @@ extension MyViewCell {
             self.delegate?.cellFour()
             
             break
-//        case 504:
-//            self.delegate?.cellFive()
-//            print("504")
-//            break
+        case 504:
+            self.delegate?.cellFive()
+            print("504")
+            break
         default:
             break
         }

@@ -109,7 +109,7 @@ class LoginView: TableBaseViewController,LoginUpViewDelegate,LoginDownViewDelega
         centerTitle.textAlignment = NSTextAlignment.center
         
         setUpView()
-        setDownView()
+//        setDownView()
 
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }

@@ -43,10 +43,23 @@ class ChangedRecordVC: WKBaseViewController {
         
         self.navigationItem.title = "兑换记录"
     
-//        loadFirst(loadURl: self.url, firstUrl: changeRocordURL)
-        webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: changeRocordURL))!))
-
-
+//        webView.load(URLRequest.init(url: URL.init(string: commaddURl(adUrl: changeRocordURL))!))
+        
+        token = localSave.object(forKey: userToken) as? String ?? ""
+        var aaa = ""
+        if changeRocordURL.contains("?") {
+            aaa = changeRocordURL + ("&devtype=1&token=") + (token)
+        } else {
+            aaa = changeRocordURL + ("?devtype=1&token=") + (token)
+        }
+        CCog(message: aaa)
+        
+        if NetStatusModel.netStatus == 0 {
+            CCog()
+            self.webView.load(URLRequest.init(url: URL.init(string: aaa)!, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 5.0))
+        } else {
+            CCog()
+            self.webView.load(URLRequest.init(url: URL.init(string: aaa)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 5.0))
+        }
     }
-    
 }

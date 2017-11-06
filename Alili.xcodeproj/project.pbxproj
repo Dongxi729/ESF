@@ -170,6 +170,14 @@
 		26C5DDFF1E518D6900C67C7C /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5DDFE1E518D6900C67C7C /* CategoryVC.swift */; };
 		26C691C81E2A034300B4E6BC /* WaitPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C691C71E2A034300B4E6BC /* WaitPayVC.swift */; };
 		26C691CA1E2A034D00B4E6BC /* WaitSendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C691C91E2A034D00B4E6BC /* WaitSendVC.swift */; };
+		26D7E1721FAF3D74005D7644 /* YHJMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E16C1FAF3D71005D7644 /* YHJMainVC.swift */; };
+		26D7E1731FAF3D74005D7644 /* GetCardV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E16D1FAF3D72005D7644 /* GetCardV.swift */; };
+		26D7E1741FAF3D74005D7644 /* YHJMOdel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E16E1FAF3D72005D7644 /* YHJMOdel.swift */; };
+		26D7E1751FAF3D74005D7644 /* MyCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E16F1FAF3D73005D7644 /* MyCardsVC.swift */; };
+		26D7E1761FAF3D74005D7644 /* MyExchangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E1701FAF3D73005D7644 /* MyExchangeVC.swift */; };
+		26D7E1771FAF3D74005D7644 /* GetCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E1711FAF3D74005D7644 /* GetCardCell.swift */; };
+		26D7E17A1FAF3DF3005D7644 /* ZDXRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E1791FAF3DF3005D7644 /* ZDXRequestTool.swift */; };
+		26D7E17C1FAF4394005D7644 /* WKV+YHJExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7E17B1FAF4394005D7644 /* WKV+YHJExtension.swift */; };
 		26ECE63E1E1FA224008ABD31 /* MYQPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ECE63D1E1FA224008ABD31 /* MYQPlaceholderTextView.m */; };
 		26ECE6481E1FC076008ABD31 /* FYLoginTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ECE6471E1FC076008ABD31 /* FYLoginTranslation.m */; };
 		26EF04F81E62E2D700D049B6 /* LabelAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF04F71E62E2D700D049B6 /* LabelAnimated.m */; };
@@ -526,6 +534,14 @@
 		26C5DDFE1E518D6900C67C7C /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		26C691C71E2A034300B4E6BC /* WaitPayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitPayVC.swift; sourceTree = "<group>"; };
 		26C691C91E2A034D00B4E6BC /* WaitSendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitSendVC.swift; sourceTree = "<group>"; };
+		26D7E16C1FAF3D71005D7644 /* YHJMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHJMainVC.swift; sourceTree = "<group>"; };
+		26D7E16D1FAF3D72005D7644 /* GetCardV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardV.swift; sourceTree = "<group>"; };
+		26D7E16E1FAF3D72005D7644 /* YHJMOdel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHJMOdel.swift; sourceTree = "<group>"; };
+		26D7E16F1FAF3D73005D7644 /* MyCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsVC.swift; sourceTree = "<group>"; };
+		26D7E1701FAF3D73005D7644 /* MyExchangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeVC.swift; sourceTree = "<group>"; };
+		26D7E1711FAF3D74005D7644 /* GetCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardCell.swift; sourceTree = "<group>"; };
+		26D7E1791FAF3DF3005D7644 /* ZDXRequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDXRequestTool.swift; sourceTree = "<group>"; };
+		26D7E17B1FAF4394005D7644 /* WKV+YHJExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKV+YHJExtension.swift"; sourceTree = "<group>"; };
 		26ECE63C1E1FA224008ABD31 /* MYQPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYQPlaceholderTextView.h; sourceTree = "<group>"; };
 		26ECE63D1E1FA224008ABD31 /* MYQPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYQPlaceholderTextView.m; sourceTree = "<group>"; };
 		26ECE6461E1FC076008ABD31 /* FYLoginTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLoginTranslation.h; sourceTree = "<group>"; };
@@ -933,6 +949,7 @@
 		260567D01E03AA8B0007B33C /* setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
+				26D7E1781FAF3D78005D7644 /* YHJ */,
 				26F8A9251E28685100656CD2 /* 详细地址(detailVC) */,
 				260567D11E03AA8B0007B33C /* Account(积分) */,
 				260567D71E03AA8B0007B33C /* addressVC(收获地址) */,
@@ -1041,6 +1058,7 @@
 		260568041E03AA8B0007B33C /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				26D7E1791FAF3DF3005D7644 /* ZDXRequestTool.swift */,
 				26EF04F61E62E2D700D049B6 /* LabelAnimated.h */,
 				26EF04F71E62E2D700D049B6 /* LabelAnimated.m */,
 				2669BEC91E5FDB2D00DCAC79 /* BaseTabbarVC.swift */,
@@ -1333,6 +1351,7 @@
 				2605681E1E03AA8B0007B33C /* WKBaseViewController.swift */,
 				26A9CA151FAAE66100871662 /* WKV+URL.swift */,
 				2619392B1FAAF01A0065034C /* NetStatusModel.swift */,
+				26D7E17B1FAF4394005D7644 /* WKV+YHJExtension.swift */,
 			);
 			name = WKV;
 			sourceTree = "<group>";
@@ -1351,6 +1370,19 @@
 				26C691C91E2A034D00B4E6BC /* WaitSendVC.swift */,
 			);
 			name = "待发货";
+			sourceTree = "<group>";
+		};
+		26D7E1781FAF3D78005D7644 /* YHJ */ = {
+			isa = PBXGroup;
+			children = (
+				26D7E16F1FAF3D73005D7644 /* MyCardsVC.swift */,
+				26D7E16C1FAF3D71005D7644 /* YHJMainVC.swift */,
+				26D7E1701FAF3D73005D7644 /* MyExchangeVC.swift */,
+				26D7E16D1FAF3D72005D7644 /* GetCardV.swift */,
+				26D7E1711FAF3D74005D7644 /* GetCardCell.swift */,
+				26D7E16E1FAF3D72005D7644 /* YHJMOdel.swift */,
+			);
+			name = YHJ;
 			sourceTree = "<group>";
 		};
 		26F19B821E30E47900AF602D /* Category(分类) */ = {
@@ -1702,6 +1734,7 @@
 				262D0C211F779EEE00AFEA12 /* AFNetworkReachabilityManager.m in Sources */,
 				26044FB11E36F34D0017EC39 /* SDWebImageDownloader.m in Sources */,
 				26633A341E0E0464006D619B /* RefreshView.swift in Sources */,
+				26D7E1721FAF3D74005D7644 /* YHJMainVC.swift in Sources */,
 				260568711E03AA8B0007B33C /* Common.swift in Sources */,
 				26F7CF0B1E2B8E6A0081387F /* AutoSolVC.swift in Sources */,
 				260568791E03AA8B0007B33C /* ImgWithRound.swift in Sources */,
@@ -1721,6 +1754,7 @@
 				262BBA2D1FAEADDA002F9817 /* NineReplaceView.swift in Sources */,
 				261161BD1E473AC500E11D03 /* POPAnimationRuntime.mm in Sources */,
 				260568781E03AA8B0007B33C /* DownImgTool.swift in Sources */,
+				26D7E1731FAF3D74005D7644 /* GetCardV.swift in Sources */,
 				261161C31E473AC500E11D03 /* POPDecayAnimation.mm in Sources */,
 				266CB5C11E0A15CB00B96225 /* NSObject+ZXPUnicode.m in Sources */,
 				26F67BB11DED75AC00396D95 /* Order.m in Sources */,
@@ -1741,6 +1775,7 @@
 				26F8A92B1E2872B500656CD2 /* DetailAddModel.swift in Sources */,
 				261161C41E473AC500E11D03 /* POPGeometry.mm in Sources */,
 				26044FAB1E36F34D0017EC39 /* NSData+ImageContentType.m in Sources */,
+				26D7E1751FAF3D74005D7644 /* MyCardsVC.swift in Sources */,
 				26F67BB81DED75AC00396D95 /* RSADataSigner.m in Sources */,
 				26044FBC1E36F34D0017EC39 /* UIView+WebCacheOperation.m in Sources */,
 				2605685D1E03AA8B0007B33C /* ChagePassViewController.swift in Sources */,
@@ -1762,6 +1797,7 @@
 				2605687D1E03AA8B0007B33C /* TableBaseViewController.swift in Sources */,
 				260568471E03AA8B0007B33C /* AccountHeaderVIew.swift in Sources */,
 				2683A2C21E15069100725842 /* TFFF.swift in Sources */,
+				26D7E17C1FAF4394005D7644 /* WKV+YHJExtension.swift in Sources */,
 				2619392C1FAAF01A0065034C /* NetStatusModel.swift in Sources */,
 				2605685A1E03AA8B0007B33C /* JiaoYIReplaceView.swift in Sources */,
 				26044F551E35F0C90017EC39 /* NineView.swift in Sources */,
@@ -1794,9 +1830,11 @@
 				2605687F1E03AA8B0007B33C /* TfPlaceHolder.swift in Sources */,
 				2605683D1E03AA8B0007B33C /* LoginModel.swift in Sources */,
 				26044F531E35F0A90017EC39 /* RightBtn.swift in Sources */,
+				26D7E1761FAF3D74005D7644 /* MyExchangeVC.swift in Sources */,
 				2605688E1E03BDDF0007B33C /* PaySuccessVC.swift in Sources */,
 				26044FCB1E37384A0017EC39 /* UINavigationBar+CustomHeight.m in Sources */,
 				262D0C201F779B6F00AFEA12 /* NetCheckTool.swift in Sources */,
+				26D7E1741FAF3D74005D7644 /* YHJMOdel.swift in Sources */,
 				2669BECA1E5FDB2D00DCAC79 /* BaseTabbarVC.swift in Sources */,
 				2619392F1FAAFE230065034C /* ZDXAlertController.swift in Sources */,
 				26F67BB91DED75AC00396D95 /* RSADataVerifier.m in Sources */,
@@ -1822,6 +1860,7 @@
 				2605686B1E03AA8B0007B33C /* ShareViewController.swift in Sources */,
 				2605685F1E03AA8B0007B33C /* ChangePassView.swift in Sources */,
 				260568481E03AA8B0007B33C /* AccountTableViewCell.swift in Sources */,
+				26D7E1771FAF3D74005D7644 /* GetCardCell.swift in Sources */,
 				260567841E03A8D60007B33C /* MBProgressHUD+LJ.m in Sources */,
 				262121D91DEF055500090974 /* PaymenyModel.swift in Sources */,
 				260567861E03A8D60007B33C /* MBProgressHUD.m in Sources */,
@@ -1856,6 +1895,7 @@
 				260568411E03AA8B0007B33C /* MyViewheaderView.swift in Sources */,
 				260567831E03A8D60007B33C /* MBManager.m in Sources */,
 				26044FB31E36F34D0017EC39 /* SDWebImageManager.m in Sources */,
+				26D7E17A1FAF3DF3005D7644 /* ZDXRequestTool.swift in Sources */,
 				2605687E1E03AA8B0007B33C /* TestNet.swift in Sources */,
 				2605683E1E03AA8B0007B33C /* LoginUpView.swift in Sources */,
 				26F9BA291E34A74C00AB371C /* DDDD.swift in Sources */,
@@ -2036,7 +2076,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ie9e.shop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongze.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2079,7 +2119,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ie9e.shop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongze.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
